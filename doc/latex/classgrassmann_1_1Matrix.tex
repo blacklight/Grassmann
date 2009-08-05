@@ -1,0 +1,739 @@
+\hypertarget{classgrassmann_1_1Matrix}{
+\section{grassmann::Matrix Class Reference}
+\label{classgrassmann_1_1Matrix}\index{grassmann::Matrix@{grassmann::Matrix}}
+}
+Class for operations on matrices.  
+
+
+{\tt \#include $<$grassmann.hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classgrassmann_1_1Matrix_2e9b599f051c90d4b8ad839bf6ad6640}{Matrix} ()
+\begin{CompactList}\small\item\em Empty constructor for the class. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix_cc0d1ad46f484440f5a9bf96f8d8c9b7}{Matrix} (const \hyperlink{classgrassmann_1_1Matrix}{Matrix} \&m)
+\begin{CompactList}\small\item\em A constructor for the class. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix_c902b727501ab805b383514480fc9ee6}{Matrix} (double $\ast$$\ast$m, size\_\-t r, size\_\-t c)
+\begin{CompactList}\small\item\em A constructor for the class. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix_1dfe3208dad7f6bde0744b6b2a7146a5}{Matrix} (size\_\-t r, size\_\-t c)
+\begin{CompactList}\small\item\em A constructor for the class. \item\end{CompactList}\item 
+size\_\-t \hyperlink{classgrassmann_1_1Matrix_1d0d6d6e85cce10485ede7b5780b92de}{rows} ()
+\begin{CompactList}\small\item\em This gets the number of rows of a matrix. \item\end{CompactList}\item 
+size\_\-t \hyperlink{classgrassmann_1_1Matrix_1e018c566cf70b50d1307258036c2765}{cols} ()
+\begin{CompactList}\small\item\em This gets the number of cols of a matrix. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \hyperlink{classgrassmann_1_1Matrix_560a478df8082041efaa25a3b372b769}{rowAt} (size\_\-t index)  throw (IndexOutOfBoundsException)
+\begin{CompactList}\small\item\em Get the content of the row at index 'index'. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \hyperlink{classgrassmann_1_1Matrix_80df98dc6f86e3cb8eb5621fb0b51179}{colAt} (size\_\-t index)  throw (IndexOutOfBoundsException)
+\begin{CompactList}\small\item\em Get the content of the column at index 'index'. \item\end{CompactList}\item 
+void \hyperlink{classgrassmann_1_1Matrix_94cd405dc70cdc2a385cce409b33424a}{insertColumn} (\hyperlink{classgrassmann_1_1Vector}{Vector} v, size\_\-t i)  throw (InvalidMatrixIndexException)
+\begin{CompactList}\small\item\em Insert a new vector in the matrix as column. \item\end{CompactList}\item 
+void \hyperlink{classgrassmann_1_1Matrix_1759617e41816a26dcb1ba761058662c}{insertColumn} (size\_\-t index,...)  throw (InvalidMatrixIndexException)
+\begin{CompactList}\small\item\em Insert a new column in the matrix. \item\end{CompactList}\item 
+void \hyperlink{classgrassmann_1_1Matrix_11d05c397236b6186a6c99b41141049b}{insertRow} (\hyperlink{classgrassmann_1_1Vector}{Vector} v, size\_\-t i)  throw (InvalidMatrixIndexException)
+\begin{CompactList}\small\item\em Insert a new vector in the matrix as row. \item\end{CompactList}\item 
+void \hyperlink{classgrassmann_1_1Matrix_aee2dee4214a333a2e67525fd76b1db5}{insertRow} (size\_\-t index,...)  throw (InvalidMatrixIndexException)
+\begin{CompactList}\small\item\em Insert a new row in the matrix. \item\end{CompactList}\item 
+std::string \hyperlink{classgrassmann_1_1Matrix_3638d902b9824845ae04a02060ca62e5}{toString} ()
+\begin{CompactList}\small\item\em Return the content of a matrix as a string. \item\end{CompactList}\item 
+double \hyperlink{classgrassmann_1_1Matrix_a58061567820df67c680f197118ddc56}{det} ()  throw (NotSquareMatrixException)
+\begin{CompactList}\small\item\em This calculates the determinant of a square matrix. \item\end{CompactList}\item 
+size\_\-t \hyperlink{classgrassmann_1_1Matrix_6eb4516b1eba6ede777894c17e0fa39f}{rank} ()
+\begin{CompactList}\small\item\em This calculates the rank of a matrix. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_2c50f5fdf0de71774883225c1caaf9b9}{subMatrix} (size\_\-t x1, size\_\-t y1, size\_\-t x2, size\_\-t y2)  throw (IndexOutOfBoundsException)
+\begin{CompactList}\small\item\em Get a submatrix from the matrix, from (x1,y1) to (x2,y2) \begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1IndexOutOfBoundsException}{IndexOutOfBoundsException}}]If trying to access an index outside of the matrix. \end{description}
+\end{Desc}
+\item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \hyperlink{classgrassmann_1_1Matrix_d6722b369c1720870f1d9902275bce9f}{eigenValues} ()  throw (NotSquareMatrixException, SingularMatrixException)
+\begin{CompactList}\small\item\em Compute an approximation of the eigenValues of a square matrix, if they exist, using the iterative QR algorithm. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_7cdc98693169505c56a3df3f3194bbb5}{inverse} ()  throw (NotSquareMatrixException, SingularMatrixException)
+\begin{CompactList}\small\item\em Compute the inverse matrix of the matrix \begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NotSquareMatrixException}{NotSquareMatrixException}}]If trying to compute the determinant of a non-square matrix \item[{\em \hyperlink{classgrassmann_1_1SingularMatrixException}{SingularMatrixException}}]If trying to compute the eigenvalues of a singular matrix. \end{description}
+\end{Desc}
+\item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_8140d96d30dacb7d36e51a0c2bd1cbf5}{transpose} ()
+\begin{CompactList}\small\item\em Return the transposed matrix. \item\end{CompactList}\item 
+double \& \hyperlink{classgrassmann_1_1Matrix_9073db52849385a50a1e7d9ba2b5c18c}{operator()} (size\_\-t i, size\_\-t j)  throw (InvalidMatrixIndexException)
+\begin{CompactList}\small\item\em Re-definition of '()' operator to access the elements of a matrix. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_ebdbbb13e0261f2c1af0f049e28adf89}{validate} ()  throw (NullMatrixDiagException)
+\begin{CompactList}\small\item\em Tries to validate a matrix (i.e. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_12e27a7a60f30c44f36263151b367774}{validate} (int \&steps)  throw (NullMatrixDiagException)
+\begin{CompactList}\small\item\em Tries to validate a matrix (i.e. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_71fb0021c0942ad8f9e0c1bcee78ae61}{validate} (\hyperlink{classgrassmann_1_1Vector}{Vector} \&v)  throw (NullMatrixDiagException)
+\begin{CompactList}\small\item\em Tries to validate a matrix (i.e. \item\end{CompactList}\item 
+double \hyperlink{classgrassmann_1_1Matrix_7ebc9791efda5a822aae68f153ab63c1}{norm1} ()
+\begin{CompactList}\small\item\em Gets norm one of a matrix. \item\end{CompactList}\item 
+double \hyperlink{classgrassmann_1_1Matrix_17d00cd96a3e8ce02740b90b14d2dadb}{norm\_\-inf} ()
+\begin{CompactList}\small\item\em Gets norm infinity of a matrix. \item\end{CompactList}\item 
+bool \hyperlink{classgrassmann_1_1Matrix_02841902fbf25602ef2a49ada709e993}{isSingular} ()  throw (NotSquareMatrixException)
+\begin{CompactList}\small\item\em Check if the matrix is singular. \item\end{CompactList}\item 
+bool \hyperlink{classgrassmann_1_1Matrix_0ec5a24568e808ce4fc48514842e7633}{isDiagonal} ()  throw (NotSquareMatrixException)
+\begin{CompactList}\small\item\em Check if the matrix is diagonal. \item\end{CompactList}\item 
+bool \hyperlink{classgrassmann_1_1Matrix_9e2ca56c045111a88dd23583c4d03f8e}{isUpperTriangular} ()  throw (NotSquareMatrixException)
+\begin{CompactList}\small\item\em Check if the matrix is upper triangular. \item\end{CompactList}\item 
+bool \hyperlink{classgrassmann_1_1Matrix_dda0c95c0df60ee264883c22da6d8b76}{isLowerTriangular} ()  throw (NotSquareMatrixException)
+\begin{CompactList}\small\item\em Check if the matrix is lower triangular. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \& \hyperlink{classgrassmann_1_1Matrix_696c3e88b7f163ac672b4e5dfaa85693}{operator+} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} a, \hyperlink{classgrassmann_1_1Matrix}{Matrix} b)  throw (UnequalMatrixSizeException)
+\begin{CompactList}\small\item\em Re-definition of '+' operator for the sum of two matrixes. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \& \hyperlink{classgrassmann_1_1Matrix_1f3e4394cd1517431ae46632f8540c96}{operator-} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} a, \hyperlink{classgrassmann_1_1Matrix}{Matrix} b)  throw (UnequalMatrixSizeException)
+\begin{CompactList}\small\item\em Re-definition of '-' operator for subtrating two matrixes. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \& \hyperlink{classgrassmann_1_1Matrix_79c865e5316aebc75afcba21bcf102bd}{operator$\ast$} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} a, \hyperlink{classgrassmann_1_1Matrix}{Matrix} b)  throw (UnequalMatrixSizeException)
+\begin{CompactList}\small\item\em Re-definition of '$\ast$' operator for the product between two matrixes. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \hyperlink{classgrassmann_1_1Matrix_5366f970d50d2681696cb03ce1df4cef}{operator$\ast$} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} a, \hyperlink{classgrassmann_1_1Vector}{Vector} v)  throw (UnequalMatrixSizeException)
+\begin{CompactList}\small\item\em Re-definition of '$\ast$' operator for the product between a matrix and a vector. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \& \hyperlink{classgrassmann_1_1Matrix_91ab0c09218b5b306a7ae46dd1ae6b71}{operator$\ast$} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} a, double l)
+\begin{CompactList}\small\item\em Re-definition of '$\ast$' operator for the product between a matrix and a scalar. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \& \hyperlink{classgrassmann_1_1Matrix_dfe35f7b86d2a6a1ea631d20038b88c9}{operator$\ast$} (double l, \hyperlink{classgrassmann_1_1Matrix}{Matrix} a)
+\item 
+bool \hyperlink{classgrassmann_1_1Matrix_f90a77a60d74b87ece26c07d2dc544ef}{operator==} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} a, \hyperlink{classgrassmann_1_1Matrix}{Matrix} b)
+\begin{CompactList}\small\item\em Check if two matrices are equal (i.e. \item\end{CompactList}\item 
+bool \hyperlink{classgrassmann_1_1Matrix_8cbc99e34ef59ed0adefd4f425705724}{operator!=} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} a, \hyperlink{classgrassmann_1_1Matrix}{Matrix} b)
+\begin{CompactList}\small\item\em Check if two matrices are not equal (i.e. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_38aaf4ec8160006c88070b706925492d}{triang} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} m)  throw (NullMatrixDiagException)
+\begin{CompactList}\small\item\em Returns a triangular matrix associated to our matrix through Gauss' method. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_8f41e07e9806c67a29a10416a430f579}{triang} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} m, int \&steps)  throw (NullMatrixDiagException)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Class for operations on matrices. 
+
+\begin{Desc}
+\item[Author:]BlackLight \end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgrassmann_1_1Matrix_2e9b599f051c90d4b8ad839bf6ad6640}{
+\index{grassmann::Matrix@{grassmann::Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[Matrix]{\setlength{\rightskip}{0pt plus 5cm}grassmann::Matrix::Matrix ()}}
+\label{classgrassmann_1_1Matrix_2e9b599f051c90d4b8ad839bf6ad6640}
+
+
+Empty constructor for the class. 
+
+\hypertarget{classgrassmann_1_1Matrix_cc0d1ad46f484440f5a9bf96f8d8c9b7}{
+\index{grassmann::Matrix@{grassmann::Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[Matrix]{\setlength{\rightskip}{0pt plus 5cm}grassmann::Matrix::Matrix (const {\bf Matrix} \& {\em m})}}
+\label{classgrassmann_1_1Matrix_cc0d1ad46f484440f5a9bf96f8d8c9b7}
+
+
+A constructor for the class. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em m}]A \hyperlink{classgrassmann_1_1Matrix}{Matrix} object \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_c902b727501ab805b383514480fc9ee6}{
+\index{grassmann::Matrix@{grassmann::Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[Matrix]{\setlength{\rightskip}{0pt plus 5cm}grassmann::Matrix::Matrix (double $\ast$$\ast$ {\em m}, \/  size\_\-t {\em r}, \/  size\_\-t {\em c})}}
+\label{classgrassmann_1_1Matrix_c902b727501ab805b383514480fc9ee6}
+
+
+A constructor for the class. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em m}]A double double-array \item[{\em r}]Number of rows \item[{\em c}]Number of cols \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_1dfe3208dad7f6bde0744b6b2a7146a5}{
+\index{grassmann::Matrix@{grassmann::Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[Matrix]{\setlength{\rightskip}{0pt plus 5cm}grassmann::Matrix::Matrix (size\_\-t {\em r}, \/  size\_\-t {\em c})}}
+\label{classgrassmann_1_1Matrix_1dfe3208dad7f6bde0744b6b2a7146a5}
+
+
+A constructor for the class. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em r}]Number of rows \item[{\em c}]Number of cols \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgrassmann_1_1Matrix_1d0d6d6e85cce10485ede7b5780b92de}{
+\index{grassmann::Matrix@{grassmann::Matrix}!rows@{rows}}
+\index{rows@{rows}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[rows]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t grassmann::Matrix::rows ()}}
+\label{classgrassmann_1_1Matrix_1d0d6d6e85cce10485ede7b5780b92de}
+
+
+This gets the number of rows of a matrix. 
+
+\hypertarget{classgrassmann_1_1Matrix_1e018c566cf70b50d1307258036c2765}{
+\index{grassmann::Matrix@{grassmann::Matrix}!cols@{cols}}
+\index{cols@{cols}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[cols]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t grassmann::Matrix::cols ()}}
+\label{classgrassmann_1_1Matrix_1e018c566cf70b50d1307258036c2765}
+
+
+This gets the number of cols of a matrix. 
+
+\hypertarget{classgrassmann_1_1Matrix_560a478df8082041efaa25a3b372b769}{
+\index{grassmann::Matrix@{grassmann::Matrix}!rowAt@{rowAt}}
+\index{rowAt@{rowAt}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[rowAt]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} grassmann::Matrix::rowAt (size\_\-t {\em index})  throw ({\bf IndexOutOfBoundsException})}}
+\label{classgrassmann_1_1Matrix_560a478df8082041efaa25a3b372b769}
+
+
+Get the content of the row at index 'index'. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]Index to be accessed \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A \hyperlink{classgrassmann_1_1Vector}{Vector} object representing that row \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1IndexOutOfBoundsException}{IndexOutOfBoundsException}}]If trying to access an index outside of the matrix \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_80df98dc6f86e3cb8eb5621fb0b51179}{
+\index{grassmann::Matrix@{grassmann::Matrix}!colAt@{colAt}}
+\index{colAt@{colAt}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[colAt]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} grassmann::Matrix::colAt (size\_\-t {\em index})  throw ({\bf IndexOutOfBoundsException})}}
+\label{classgrassmann_1_1Matrix_80df98dc6f86e3cb8eb5621fb0b51179}
+
+
+Get the content of the column at index 'index'. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]Index to be accessed \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A \hyperlink{classgrassmann_1_1Vector}{Vector} object representing that column \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1IndexOutOfBoundsException}{IndexOutOfBoundsException}}]If trying to access an index outside of the matrix \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_94cd405dc70cdc2a385cce409b33424a}{
+\index{grassmann::Matrix@{grassmann::Matrix}!insertColumn@{insertColumn}}
+\index{insertColumn@{insertColumn}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[insertColumn]{\setlength{\rightskip}{0pt plus 5cm}void grassmann::Matrix::insertColumn ({\bf Vector} {\em v}, \/  size\_\-t {\em i})  throw ({\bf InvalidMatrixIndexException})}}
+\label{classgrassmann_1_1Matrix_94cd405dc70cdc2a385cce409b33424a}
+
+
+Insert a new vector in the matrix as column. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em v}]\hyperlink{classgrassmann_1_1Vector}{Vector} to be inserted \item[{\em i}]Index in which the vector should be inserted \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1InvalidMatrixIndexException}{InvalidMatrixIndexException}}]If trying to access an index outside of the matrix \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_1759617e41816a26dcb1ba761058662c}{
+\index{grassmann::Matrix@{grassmann::Matrix}!insertColumn@{insertColumn}}
+\index{insertColumn@{insertColumn}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[insertColumn]{\setlength{\rightskip}{0pt plus 5cm}void grassmann::Matrix::insertColumn (size\_\-t {\em index}, \/   {\em ...})  throw ({\bf InvalidMatrixIndexException})}}
+\label{classgrassmann_1_1Matrix_1759617e41816a26dcb1ba761058662c}
+
+
+Insert a new column in the matrix. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]Index of the column to be inserted \item[{\em ...}]Values to be copied \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1InvalidMatrixIndexException}{InvalidMatrixIndexException}}]If trying to access an index outside of the matrix \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_11d05c397236b6186a6c99b41141049b}{
+\index{grassmann::Matrix@{grassmann::Matrix}!insertRow@{insertRow}}
+\index{insertRow@{insertRow}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[insertRow]{\setlength{\rightskip}{0pt plus 5cm}void grassmann::Matrix::insertRow ({\bf Vector} {\em v}, \/  size\_\-t {\em i})  throw ({\bf InvalidMatrixIndexException})}}
+\label{classgrassmann_1_1Matrix_11d05c397236b6186a6c99b41141049b}
+
+
+Insert a new vector in the matrix as row. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em v}]\hyperlink{classgrassmann_1_1Vector}{Vector} to be inserted \item[{\em i}]Index in which the vector should be inserted \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\hyperlink{classgrassmann_1_1InvalidMatrixIndexException}{InvalidMatrixIndexException} If trying to access an index outside of the matrix \end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_aee2dee4214a333a2e67525fd76b1db5}{
+\index{grassmann::Matrix@{grassmann::Matrix}!insertRow@{insertRow}}
+\index{insertRow@{insertRow}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[insertRow]{\setlength{\rightskip}{0pt plus 5cm}void grassmann::Matrix::insertRow (size\_\-t {\em index}, \/   {\em ...})  throw ({\bf InvalidMatrixIndexException})}}
+\label{classgrassmann_1_1Matrix_aee2dee4214a333a2e67525fd76b1db5}
+
+
+Insert a new row in the matrix. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em index}]Index of the column to be inserted \item[{\em ...}]Values to be copied \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]\hyperlink{classgrassmann_1_1InvalidMatrixIndexException}{InvalidMatrixIndexException} If trying to access an index outside of the matrix \end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_3638d902b9824845ae04a02060ca62e5}{
+\index{grassmann::Matrix@{grassmann::Matrix}!toString@{toString}}
+\index{toString@{toString}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[toString]{\setlength{\rightskip}{0pt plus 5cm}std::string grassmann::Matrix::toString ()}}
+\label{classgrassmann_1_1Matrix_3638d902b9824845ae04a02060ca62e5}
+
+
+Return the content of a matrix as a string. 
+
+\hypertarget{classgrassmann_1_1Matrix_a58061567820df67c680f197118ddc56}{
+\index{grassmann::Matrix@{grassmann::Matrix}!det@{det}}
+\index{det@{det}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[det]{\setlength{\rightskip}{0pt plus 5cm}double grassmann::Matrix::det ()  throw ({\bf NotSquareMatrixException})}}
+\label{classgrassmann_1_1Matrix_a58061567820df67c680f197118ddc56}
+
+
+This calculates the determinant of a square matrix. 
+
+\begin{Desc}
+\item[Returns:]The determinant of the matrix \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NotSquareMatrixException}{NotSquareMatrixException}}]If trying to compute the determinant of a non-square matrix \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_6eb4516b1eba6ede777894c17e0fa39f}{
+\index{grassmann::Matrix@{grassmann::Matrix}!rank@{rank}}
+\index{rank@{rank}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[rank]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t grassmann::Matrix::rank ()}}
+\label{classgrassmann_1_1Matrix_6eb4516b1eba6ede777894c17e0fa39f}
+
+
+This calculates the rank of a matrix. 
+
+\hypertarget{classgrassmann_1_1Matrix_2c50f5fdf0de71774883225c1caaf9b9}{
+\index{grassmann::Matrix@{grassmann::Matrix}!subMatrix@{subMatrix}}
+\index{subMatrix@{subMatrix}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[subMatrix]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} grassmann::Matrix::subMatrix (size\_\-t {\em x1}, \/  size\_\-t {\em y1}, \/  size\_\-t {\em x2}, \/  size\_\-t {\em y2})  throw ({\bf IndexOutOfBoundsException})}}
+\label{classgrassmann_1_1Matrix_2c50f5fdf0de71774883225c1caaf9b9}
+
+
+Get a submatrix from the matrix, from (x1,y1) to (x2,y2) \begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1IndexOutOfBoundsException}{IndexOutOfBoundsException}}]If trying to access an index outside of the matrix. \end{description}
+\end{Desc}
+
+
+\hypertarget{classgrassmann_1_1Matrix_d6722b369c1720870f1d9902275bce9f}{
+\index{grassmann::Matrix@{grassmann::Matrix}!eigenValues@{eigenValues}}
+\index{eigenValues@{eigenValues}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[eigenValues]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} grassmann::Matrix::eigenValues ()  throw ({\bf NotSquareMatrixException}, {\bf SingularMatrixException})}}
+\label{classgrassmann_1_1Matrix_d6722b369c1720870f1d9902275bce9f}
+
+
+Compute an approximation of the eigenValues of a square matrix, if they exist, using the iterative QR algorithm. 
+
+\begin{Desc}
+\item[Returns:]A vector containing an approximation of the eigenValues \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NotSquareMatrixException}{NotSquareMatrixException}}]If trying to compute the determinant of a non-square matrix \item[{\em \hyperlink{classgrassmann_1_1SingularMatrixException}{SingularMatrixException}}]If trying to compute the eigenvalues of a singular matrix \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_7cdc98693169505c56a3df3f3194bbb5}{
+\index{grassmann::Matrix@{grassmann::Matrix}!inverse@{inverse}}
+\index{inverse@{inverse}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[inverse]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} grassmann::Matrix::inverse ()  throw ({\bf NotSquareMatrixException}, {\bf SingularMatrixException})}}
+\label{classgrassmann_1_1Matrix_7cdc98693169505c56a3df3f3194bbb5}
+
+
+Compute the inverse matrix of the matrix \begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NotSquareMatrixException}{NotSquareMatrixException}}]If trying to compute the determinant of a non-square matrix \item[{\em \hyperlink{classgrassmann_1_1SingularMatrixException}{SingularMatrixException}}]If trying to compute the eigenvalues of a singular matrix. \end{description}
+\end{Desc}
+
+
+\hypertarget{classgrassmann_1_1Matrix_8140d96d30dacb7d36e51a0c2bd1cbf5}{
+\index{grassmann::Matrix@{grassmann::Matrix}!transpose@{transpose}}
+\index{transpose@{transpose}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[transpose]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} grassmann::Matrix::transpose ()}}
+\label{classgrassmann_1_1Matrix_8140d96d30dacb7d36e51a0c2bd1cbf5}
+
+
+Return the transposed matrix. 
+
+\hypertarget{classgrassmann_1_1Matrix_9073db52849385a50a1e7d9ba2b5c18c}{
+\index{grassmann::Matrix@{grassmann::Matrix}!operator()@{operator()}}
+\index{operator()@{operator()}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[operator()]{\setlength{\rightskip}{0pt plus 5cm}double\& grassmann::Matrix::operator() (size\_\-t {\em i}, \/  size\_\-t {\em j})  throw ({\bf InvalidMatrixIndexException})}}
+\label{classgrassmann_1_1Matrix_9073db52849385a50a1e7d9ba2b5c18c}
+
+
+Re-definition of '()' operator to access the elements of a matrix. 
+
+To access the elements of a matrix you will use parenthesis. e.g.:\small\begin{alltt}
+  \hyperlink{classgrassmann_1_1Matrix}{Matrix} A(2,2);
+  A(0,0) = 1;
+  A(0,1) = 0;
+  A(1,0) = 0;
+  A(1,1) = 1;\end{alltt}
+\normalsize 
+
+
+\small\begin{alltt}  for (size\_t i=0; i < A.rows(); i++)  \{
+    for (size\_t j=0; j < A.cols(); j++)
+      cout << A(i,j) << " ";
+    cout << endl;
+  \}\end{alltt}
+\normalsize 
+
+
+\small\begin{alltt} \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em i}]Index of the row
+ \item[{\em j}]Index of the column
+ \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A reference to the element at pos (i,j)
+ \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1InvalidMatrixIndexException}{InvalidMatrixIndexException}}]If trying to access an index outside of the matrix
+\end{description}
+\end{Desc}
+\end{alltt}
+\normalsize 
+\hypertarget{classgrassmann_1_1Matrix_ebdbbb13e0261f2c1af0f049e28adf89}{
+\index{grassmann::Matrix@{grassmann::Matrix}!validate@{validate}}
+\index{validate@{validate}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[validate]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} grassmann::Matrix::validate ()  throw ({\bf NullMatrixDiagException})}}
+\label{classgrassmann_1_1Matrix_ebdbbb13e0261f2c1af0f049e28adf89}
+
+
+Tries to validate a matrix (i.e. 
+
+removing eventual null rows or column or linear dependent rows or columns) \begin{Desc}
+\item[Returns:]Reference to the validated matrix \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NullMatrixDiagException}{NullMatrixDiagException}}]If the matrix has null elements along the diagonal and they can't be reduced \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_12e27a7a60f30c44f36263151b367774}{
+\index{grassmann::Matrix@{grassmann::Matrix}!validate@{validate}}
+\index{validate@{validate}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[validate]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} grassmann::Matrix::validate (int \& {\em steps})  throw ({\bf NullMatrixDiagException})}}
+\label{classgrassmann_1_1Matrix_12e27a7a60f30c44f36263151b367774}
+
+
+Tries to validate a matrix (i.e. 
+
+removing eventual null rows or column or linear dependent rows or columns) \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em steps}]Reference to an integer that will contain the number of iterations made to get a valid matrix \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Reference to the validated matrix \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NullMatrixDiagException}{NullMatrixDiagException}}]If the matrix has null elements along the diagonal and they can't be reduced \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_71fb0021c0942ad8f9e0c1bcee78ae61}{
+\index{grassmann::Matrix@{grassmann::Matrix}!validate@{validate}}
+\index{validate@{validate}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[validate]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} grassmann::Matrix::validate ({\bf Vector} \& {\em v})  throw ({\bf NullMatrixDiagException})}}
+\label{classgrassmann_1_1Matrix_71fb0021c0942ad8f9e0c1bcee78ae61}
+
+
+Tries to validate a matrix (i.e. 
+
+removing eventual null rows or column or linear dependent rows or columns) to be used to solve a linear system, so all the swaps applied to the matrix are also applied to the vector of coefficients of the system \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em v}]Reference to the vector of system's coefficients \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Reference to the validated matrix \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NullMatrixDiagException}{NullMatrixDiagException}}]If the matrix has null elements along the diagonal and they can't be reduced \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_7ebc9791efda5a822aae68f153ab63c1}{
+\index{grassmann::Matrix@{grassmann::Matrix}!norm1@{norm1}}
+\index{norm1@{norm1}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[norm1]{\setlength{\rightskip}{0pt plus 5cm}double grassmann::Matrix::norm1 ()}}
+\label{classgrassmann_1_1Matrix_7ebc9791efda5a822aae68f153ab63c1}
+
+
+Gets norm one of a matrix. 
+
+\hypertarget{classgrassmann_1_1Matrix_17d00cd96a3e8ce02740b90b14d2dadb}{
+\index{grassmann::Matrix@{grassmann::Matrix}!norm\_\-inf@{norm\_\-inf}}
+\index{norm\_\-inf@{norm\_\-inf}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[norm\_\-inf]{\setlength{\rightskip}{0pt plus 5cm}double grassmann::Matrix::norm\_\-inf ()}}
+\label{classgrassmann_1_1Matrix_17d00cd96a3e8ce02740b90b14d2dadb}
+
+
+Gets norm infinity of a matrix. 
+
+\hypertarget{classgrassmann_1_1Matrix_02841902fbf25602ef2a49ada709e993}{
+\index{grassmann::Matrix@{grassmann::Matrix}!isSingular@{isSingular}}
+\index{isSingular@{isSingular}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[isSingular]{\setlength{\rightskip}{0pt plus 5cm}bool grassmann::Matrix::isSingular ()  throw ({\bf NotSquareMatrixException})}}
+\label{classgrassmann_1_1Matrix_02841902fbf25602ef2a49ada709e993}
+
+
+Check if the matrix is singular. 
+
+\begin{Desc}
+\item[Returns:]true if it is singular, false otherwise \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NotSquareMatrixException}{NotSquareMatrixException}}]If trying to compute the determinant of a non-square matrix \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_0ec5a24568e808ce4fc48514842e7633}{
+\index{grassmann::Matrix@{grassmann::Matrix}!isDiagonal@{isDiagonal}}
+\index{isDiagonal@{isDiagonal}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[isDiagonal]{\setlength{\rightskip}{0pt plus 5cm}bool grassmann::Matrix::isDiagonal ()  throw ({\bf NotSquareMatrixException})}}
+\label{classgrassmann_1_1Matrix_0ec5a24568e808ce4fc48514842e7633}
+
+
+Check if the matrix is diagonal. 
+
+\begin{Desc}
+\item[Returns:]true if it is diagonal, false otherwise \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NotSquareMatrixException}{NotSquareMatrixException}}]If trying to compute the determinant of a non-square matrix \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_9e2ca56c045111a88dd23583c4d03f8e}{
+\index{grassmann::Matrix@{grassmann::Matrix}!isUpperTriangular@{isUpperTriangular}}
+\index{isUpperTriangular@{isUpperTriangular}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[isUpperTriangular]{\setlength{\rightskip}{0pt plus 5cm}bool grassmann::Matrix::isUpperTriangular ()  throw ({\bf NotSquareMatrixException})}}
+\label{classgrassmann_1_1Matrix_9e2ca56c045111a88dd23583c4d03f8e}
+
+
+Check if the matrix is upper triangular. 
+
+\begin{Desc}
+\item[Returns:]true if it is upper triangular, false otherwise \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NotSquareMatrixException}{NotSquareMatrixException}}]If trying to compute the determinant of a non-square matrix \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_dda0c95c0df60ee264883c22da6d8b76}{
+\index{grassmann::Matrix@{grassmann::Matrix}!isLowerTriangular@{isLowerTriangular}}
+\index{isLowerTriangular@{isLowerTriangular}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[isLowerTriangular]{\setlength{\rightskip}{0pt plus 5cm}bool grassmann::Matrix::isLowerTriangular ()  throw ({\bf NotSquareMatrixException})}}
+\label{classgrassmann_1_1Matrix_dda0c95c0df60ee264883c22da6d8b76}
+
+
+Check if the matrix is lower triangular. 
+
+\begin{Desc}
+\item[Returns:]true if it is lower triangular, false otherwise \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NotSquareMatrixException}{NotSquareMatrixException}}]If trying to compute the determinant of a non-square matrix \end{description}
+\end{Desc}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classgrassmann_1_1Matrix_696c3e88b7f163ac672b4e5dfaa85693}{
+\index{grassmann::Matrix@{grassmann::Matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[operator+]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix}\& operator+ ({\bf Matrix} {\em a}, \/  {\bf Matrix} {\em b})  throw ({\bf UnequalMatrixSizeException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_696c3e88b7f163ac672b4e5dfaa85693}
+
+
+Re-definition of '+' operator for the sum of two matrixes. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]First matrix \item[{\em b}]Second matrix \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1UnequalMatrixSizeException}{UnequalMatrixSizeException}}]If trying to operate on two matrices whose size is not the same \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_1f3e4394cd1517431ae46632f8540c96}{
+\index{grassmann::Matrix@{grassmann::Matrix}!operator-@{operator-}}
+\index{operator-@{operator-}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[operator-]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix}\& operator- ({\bf Matrix} {\em a}, \/  {\bf Matrix} {\em b})  throw ({\bf UnequalMatrixSizeException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_1f3e4394cd1517431ae46632f8540c96}
+
+
+Re-definition of '-' operator for subtrating two matrixes. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]First matrix \item[{\em b}]Second matrix \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1UnequalMatrixSizeException}{UnequalMatrixSizeException}}]If trying to operate on two matrices whose size is not the same \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_79c865e5316aebc75afcba21bcf102bd}{
+\index{grassmann::Matrix@{grassmann::Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[operator$\ast$]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix}\& operator$\ast$ ({\bf Matrix} {\em a}, \/  {\bf Matrix} {\em b})  throw ({\bf UnequalMatrixSizeException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_79c865e5316aebc75afcba21bcf102bd}
+
+
+Re-definition of '$\ast$' operator for the product between two matrixes. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]First matrix \item[{\em b}]Second matrix \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A reference to a matrix representing the product between a and b \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1UnequalMatrixSizeException}{UnequalMatrixSizeException}}]If trying to operate on two matrices whose size is not the same \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_5366f970d50d2681696cb03ce1df4cef}{
+\index{grassmann::Matrix@{grassmann::Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[operator$\ast$]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} operator$\ast$ ({\bf Matrix} {\em a}, \/  {\bf Vector} {\em v})  throw ({\bf UnequalMatrixSizeException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_5366f970d50d2681696cb03ce1df4cef}
+
+
+Re-definition of '$\ast$' operator for the product between a matrix and a vector. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]\hyperlink{classgrassmann_1_1Matrix}{Matrix} \item[{\em v}]\hyperlink{classgrassmann_1_1Vector}{Vector} \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A vector representing the product between a and v \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1UnequalMatrixSizeException}{UnequalMatrixSizeException}}]If trying to operate on two matrices whose size is not the same \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_91ab0c09218b5b306a7ae46dd1ae6b71}{
+\index{grassmann::Matrix@{grassmann::Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[operator$\ast$]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix}\& operator$\ast$ ({\bf Matrix} {\em a}, \/  double {\em l})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_91ab0c09218b5b306a7ae46dd1ae6b71}
+
+
+Re-definition of '$\ast$' operator for the product between a matrix and a scalar. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]\hyperlink{classgrassmann_1_1Matrix}{Matrix} \item[{\em l}]Scalar \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A matrix representing the product between a and l \end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_dfe35f7b86d2a6a1ea631d20038b88c9}{
+\index{grassmann::Matrix@{grassmann::Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[operator$\ast$]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix}\& operator$\ast$ (double {\em l}, \/  {\bf Matrix} {\em a})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_dfe35f7b86d2a6a1ea631d20038b88c9}
+
+
+\hypertarget{classgrassmann_1_1Matrix_f90a77a60d74b87ece26c07d2dc544ef}{
+\index{grassmann::Matrix@{grassmann::Matrix}!operator==@{operator==}}
+\index{operator==@{operator==}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[operator==]{\setlength{\rightskip}{0pt plus 5cm}bool operator== ({\bf Matrix} {\em a}, \/  {\bf Matrix} {\em b})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_f90a77a60d74b87ece26c07d2dc544ef}
+
+
+Check if two matrices are equal (i.e. 
+
+the size is the same and all the elements are equal) \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]First matrix \item[{\em b}]Second matrix \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if they are equal, false otherwise \end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_8cbc99e34ef59ed0adefd4f425705724}{
+\index{grassmann::Matrix@{grassmann::Matrix}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[operator"!=]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= ({\bf Matrix} {\em a}, \/  {\bf Matrix} {\em b})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_8cbc99e34ef59ed0adefd4f425705724}
+
+
+Check if two matrices are not equal (i.e. 
+
+the size is not the same or the elements are not equal) \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]First matrix \item[{\em b}]Second matrix \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if they are not equal, false otherwise \end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_38aaf4ec8160006c88070b706925492d}{
+\index{grassmann::Matrix@{grassmann::Matrix}!triang@{triang}}
+\index{triang@{triang}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[triang]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} triang ({\bf Matrix} {\em m})  throw ({\bf NullMatrixDiagException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_38aaf4ec8160006c88070b706925492d}
+
+
+Returns a triangular matrix associated to our matrix through Gauss' method. 
+
+To be done if and only if the matrix is not singular, else an exception will be raised \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em m}]\hyperlink{classgrassmann_1_1Matrix}{Matrix} to triangularize \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Reference to the triangularized matrix \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NullMatrixDiagException}{NullMatrixDiagException}}]If the matrix has null elements along the diagonal and they can't be reduced \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Matrix_8f41e07e9806c67a29a10416a430f579}{
+\index{grassmann::Matrix@{grassmann::Matrix}!triang@{triang}}
+\index{triang@{triang}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[triang]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} triang ({\bf Matrix} {\em m}, \/  int \& {\em steps})  throw ({\bf NullMatrixDiagException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_8f41e07e9806c67a29a10416a430f579}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{grassmann_8hpp}{grassmann.hpp}\end{CompactItemize}

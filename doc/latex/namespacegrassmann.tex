@@ -1,0 +1,116 @@
+\hypertarget{namespacegrassmann}{
+\section{grassmann Namespace Reference}
+\label{namespacegrassmann}\index{grassmann@{grassmann}}
+}
+Main namespace of the library.  
+
+
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class \hyperlink{classgrassmann_1_1Vector}{Vector}
+\begin{CompactList}\small\item\em Class for operations on vectors. \item\end{CompactList}\item 
+class \hyperlink{classgrassmann_1_1Matrix}{Matrix}
+\begin{CompactList}\small\item\em Class for operations on matrices. \item\end{CompactList}\item 
+class \hyperlink{classgrassmann_1_1UnequalMatrixSizeException}{UnequalMatrixSizeException}
+\begin{CompactList}\small\item\em Exception raised when trying to sum or doing operations between matrix having incompatible sizes. \item\end{CompactList}\item 
+class \hyperlink{classgrassmann_1_1InvalidMatrixIndexException}{InvalidMatrixIndexException}
+\begin{CompactList}\small\item\em Exception raised when trying to access to a member of a matrix on an invalid position. \item\end{CompactList}\item 
+class \hyperlink{classgrassmann_1_1NullMatrixDiagException}{NullMatrixDiagException}
+\begin{CompactList}\small\item\em Exception raised when trying to triangularize or compute the determinant of a matrix that may be singular. \item\end{CompactList}\item 
+class \hyperlink{classgrassmann_1_1NotSquareMatrixException}{NotSquareMatrixException}
+\begin{CompactList}\small\item\em Exception raised when trying to compute the determinant or solving a linear system with a matrix that is not square. \item\end{CompactList}\item 
+class \hyperlink{classgrassmann_1_1UndefinedSystemException}{UndefinedSystemException}
+\begin{CompactList}\small\item\em Exception raised when trying to solve an undefined linear system. \item\end{CompactList}\item 
+class \hyperlink{classgrassmann_1_1UnequalVectorSizeException}{UnequalVectorSizeException}
+\begin{CompactList}\small\item\em Exception raised when the size of two vector is not the same. \item\end{CompactList}\item 
+class \hyperlink{classgrassmann_1_1IndexOutOfBoundsException}{IndexOutOfBoundsException}
+\begin{CompactList}\small\item\em Exception raised when trying to access an element out of the vector's bounds. \item\end{CompactList}\item 
+class \hyperlink{classgrassmann_1_1SingularMatrixException}{SingularMatrixException}
+\begin{CompactList}\small\item\em Exception raised when a square matrix is singular. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \hyperlink{namespacegrassmann_bc7cc2e4f7133d5867c3eeb29c506f2b}{solve} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} a, \hyperlink{classgrassmann_1_1Vector}{Vector} coeff)  throw (NotSquareMatrixException, UndefinedSystemException)
+\begin{CompactList}\small\item\em Solves a linear system, for which is given the matrix a of variables' coefficients and the vector coeff of numeric coefficients. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{namespacegrassmann_52c01a5f35814c18bdd1af4674378470}{identityMatrix} (size\_\-t n)
+\begin{CompactList}\small\item\em Return the identity matrix (i.e. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \hyperlink{namespacegrassmann_f05f7cfa12aaac77dbbd4bb494e74972}{nullVector} (size\_\-t n)
+\begin{CompactList}\small\item\em Return the null vector by size n. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Main namespace of the library. 
+
+\subsection{Function Documentation}
+\hypertarget{namespacegrassmann_52c01a5f35814c18bdd1af4674378470}{
+\index{grassmann@{grassmann}!identityMatrix@{identityMatrix}}
+\index{identityMatrix@{identityMatrix}!grassmann@{grassmann}}
+\subsubsection[identityMatrix]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} grassmann::identityMatrix (size\_\-t {\em n})}}
+\label{namespacegrassmann_52c01a5f35814c18bdd1af4674378470}
+
+
+Return the identity matrix (i.e. 
+
+with all '1' along the main diagonal) by size n \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em n}]Size of the matrix \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Identity matrix by size n \end{Desc}
+\hypertarget{namespacegrassmann_f05f7cfa12aaac77dbbd4bb494e74972}{
+\index{grassmann@{grassmann}!nullVector@{nullVector}}
+\index{nullVector@{nullVector}!grassmann@{grassmann}}
+\subsubsection[nullVector]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} grassmann::nullVector (size\_\-t {\em n})}}
+\label{namespacegrassmann_f05f7cfa12aaac77dbbd4bb494e74972}
+
+
+Return the null vector by size n. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em n}]Size of the vector \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Null vector by size n \end{Desc}
+\hypertarget{namespacegrassmann_bc7cc2e4f7133d5867c3eeb29c506f2b}{
+\index{grassmann@{grassmann}!solve@{solve}}
+\index{solve@{solve}!grassmann@{grassmann}}
+\subsubsection[solve]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} grassmann::solve (Matrix {\em a}, \/  Vector {\em coeff})  throw ({\bf NotSquareMatrixException}, {\bf UndefinedSystemException})}}
+\label{namespacegrassmann_bc7cc2e4f7133d5867c3eeb29c506f2b}
+
+
+Solves a linear system, for which is given the matrix a of variables' coefficients and the vector coeff of numeric coefficients. 
+
+To be done if and only if the matrix is not singular and the vector does not contain null values. For example, let's consider the linear system
+
+\small\begin{alltt}		x1 + x2 + x3 = 6
+ 		2*x1 + x2 - x3 = 1
+ 		x1 + x2 + 2*x3 = 9\end{alltt}
+\normalsize 
+
+
+Then, A will be
+
+\small\begin{alltt} 		(1  1  1)
+ 		(2  1 -1)
+ 		(1  1  2)\end{alltt}
+\normalsize 
+
+
+and coeff will be (6,1,9) A vector containing the solution (1,2,3) will be returned
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em coeff}]\hyperlink{classgrassmann_1_1Vector}{Vector} of numeric coefficients \item[{\em a}]\hyperlink{classgrassmann_1_1Matrix}{Matrix} containing the coefficients of the variables \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A vector containing, if the system is possible and the solution is unique, the solution for the system \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1NotSquareMatrixException}{NotSquareMatrixException}}]If trying to compute the determinant of a non-square matrix \item[{\em \hyperlink{classgrassmann_1_1UndefinedSystemException}{UndefinedSystemException}}]If the system is undefined \end{description}
+\end{Desc}

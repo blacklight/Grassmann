@@ -1,0 +1,368 @@
+\hypertarget{classgrassmann_1_1Vector}{
+\section{grassmann::Vector Class Reference}
+\label{classgrassmann_1_1Vector}\index{grassmann::Vector@{grassmann::Vector}}
+}
+Class for operations on vectors.  
+
+
+{\tt \#include $<$grassmann.hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{classgrassmann_1_1Vector_aa833e1ac1753a65c2885a9ce88ffeff}{Vector} ()
+\begin{CompactList}\small\item\em Default constructor. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector_d8278186455c0ecbe065541a6c18a768}{Vector} (std::vector$<$ double $>$ v)
+\begin{CompactList}\small\item\em Constructor, given a vector$<$double$>$ object. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector_5d7bb89bb3d2d8aa26309ca97ddcad66}{Vector} (double $\ast$v, size\_\-t size)
+\begin{CompactList}\small\item\em Constructor, given a double\mbox{[}\mbox{]} array. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector_62ece542ba7c51a22866f6b8514f33ef}{Vector} (size\_\-t size,...)
+\begin{CompactList}\small\item\em Constructor, given a list of double values. \item\end{CompactList}\item 
+double \hyperlink{classgrassmann_1_1Vector_1c53c0f4829396b3db7aa4096d37d605}{norm2} ()
+\begin{CompactList}\small\item\em Gets the 2-norm of a double vector of size n. \item\end{CompactList}\item 
+double \& \hyperlink{classgrassmann_1_1Vector_ff6d641099c55e400a9116415fa86c6c}{operator\mbox{[}$\,$\mbox{]}} (size\_\-t i)  throw (IndexOutOfBoundsException)
+\begin{CompactList}\small\item\em Gets the i-th member of a vector. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \& \hyperlink{classgrassmann_1_1Vector_69966901d7ffcd3f0df9ffd37a637a1c}{operator$<$$<$} (double element)
+\item 
+size\_\-t \hyperlink{classgrassmann_1_1Vector_9ca025b6499bf75f21295c3fa49d03b4}{size} ()
+\begin{CompactList}\small\item\em Gets the size of the vector. \item\end{CompactList}\item 
+double \hyperlink{classgrassmann_1_1Vector_5b66d2b06688e0e4abfb7a2d62c73f35}{max} ()
+\begin{CompactList}\small\item\em Gets the maximum element of a vector. \item\end{CompactList}\item 
+void \hyperlink{classgrassmann_1_1Vector_b291b7fed796d989e4448c240857cf63}{push\_\-back} (double el)
+\begin{CompactList}\small\item\em Push a new element into the array. \item\end{CompactList}\item 
+bool \hyperlink{classgrassmann_1_1Vector_233859ed21cd1cbba69d240de0cf2ba3}{isNull} ()
+\begin{CompactList}\small\item\em Checks if the vector contains only null elements. \item\end{CompactList}\item 
+bool \hyperlink{classgrassmann_1_1Vector_96dd7bb0a8a2620e34b8a3ac1342deff}{multiple} (\hyperlink{classgrassmann_1_1Vector}{Vector} v1)
+\begin{CompactList}\small\item\em Checks if a vector is multiple of another (e.g. \item\end{CompactList}\item 
+void \hyperlink{classgrassmann_1_1Vector_c43808ba1c06b8e502b6a4430c674bd4}{clear} ()
+\begin{CompactList}\small\item\em Clears the vector. \item\end{CompactList}\item 
+std::string \hyperlink{classgrassmann_1_1Vector_2101413da90bea7fd2c911342b48cb60}{toString} ()
+\begin{CompactList}\small\item\em Return the vector's content as a string. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \hyperlink{classgrassmann_1_1Vector_802964ed6ee76e3b82662c7b0bfa251a}{operator+} (\hyperlink{classgrassmann_1_1Vector}{Vector} \&a, \hyperlink{classgrassmann_1_1Vector}{Vector} \&b)  throw (UnequalVectorSizeException)
+\begin{CompactList}\small\item\em Sum of two vectors. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \hyperlink{classgrassmann_1_1Vector_ac3997b0f5002019c4373e8f9005f85b}{operator-} (\hyperlink{classgrassmann_1_1Vector}{Vector} \&a, \hyperlink{classgrassmann_1_1Vector}{Vector} \&b)  throw (UnequalVectorSizeException)
+\begin{CompactList}\small\item\em Difference between two vectors. \item\end{CompactList}\item 
+double \hyperlink{classgrassmann_1_1Vector_cd40ad4e72bc86ac3fbf725cf8184d2d}{operator$\ast$} (\hyperlink{classgrassmann_1_1Vector}{Vector} \&a, \hyperlink{classgrassmann_1_1Vector}{Vector} \&b)  throw (UnequalVectorSizeException)
+\begin{CompactList}\small\item\em Scalar product between two vectors. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \hyperlink{classgrassmann_1_1Vector_e5f388dfbc55ca5afce80591fbfdcd67}{operator$\ast$} (double l, \hyperlink{classgrassmann_1_1Vector}{Vector} v)
+\begin{CompactList}\small\item\em Product between a vector and a scalar. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \hyperlink{classgrassmann_1_1Vector_0b7d545365b106c4a84d6970964ab56c}{operator$\ast$} (\hyperlink{classgrassmann_1_1Vector}{Vector} v, double l)
+\item 
+bool \hyperlink{classgrassmann_1_1Vector_5d46747ad1ba11f461f4db8945e9bedf}{operator==} (\hyperlink{classgrassmann_1_1Vector}{Vector} a, \hyperlink{classgrassmann_1_1Vector}{Vector} b)
+\begin{CompactList}\small\item\em Check if two vectors are equal, i.e. \item\end{CompactList}\item 
+bool \hyperlink{classgrassmann_1_1Vector_a73d83b4b0d593774cdbc7874ef72e81}{operator!=} (\hyperlink{classgrassmann_1_1Vector}{Vector} a, \hyperlink{classgrassmann_1_1Vector}{Vector} b)
+\begin{CompactList}\small\item\em Check if two vectors are different, i.e. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Class for operations on vectors. 
+
+\begin{Desc}
+\item[Author:]BlackLight \end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classgrassmann_1_1Vector_aa833e1ac1753a65c2885a9ce88ffeff}{
+\index{grassmann::Vector@{grassmann::Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[Vector]{\setlength{\rightskip}{0pt plus 5cm}grassmann::Vector::Vector ()}}
+\label{classgrassmann_1_1Vector_aa833e1ac1753a65c2885a9ce88ffeff}
+
+
+Default constructor. 
+
+It simply does nothing. \hypertarget{classgrassmann_1_1Vector_d8278186455c0ecbe065541a6c18a768}{
+\index{grassmann::Vector@{grassmann::Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[Vector]{\setlength{\rightskip}{0pt plus 5cm}grassmann::Vector::Vector (std::vector$<$ double $>$ {\em v})}}
+\label{classgrassmann_1_1Vector_d8278186455c0ecbe065541a6c18a768}
+
+
+Constructor, given a vector$<$double$>$ object. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em v}]Input vector$<$double$>$ \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Vector_5d7bb89bb3d2d8aa26309ca97ddcad66}{
+\index{grassmann::Vector@{grassmann::Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[Vector]{\setlength{\rightskip}{0pt plus 5cm}grassmann::Vector::Vector (double $\ast$ {\em v}, \/  size\_\-t {\em size})}}
+\label{classgrassmann_1_1Vector_5d7bb89bb3d2d8aa26309ca97ddcad66}
+
+
+Constructor, given a double\mbox{[}\mbox{]} array. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em v}]double\mbox{[}\mbox{]} array \item[{\em size}]Size \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Vector_62ece542ba7c51a22866f6b8514f33ef}{
+\index{grassmann::Vector@{grassmann::Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[Vector]{\setlength{\rightskip}{0pt plus 5cm}grassmann::Vector::Vector (size\_\-t {\em size}, \/   {\em ...})}}
+\label{classgrassmann_1_1Vector_62ece542ba7c51a22866f6b8514f33ef}
+
+
+Constructor, given a list of double values. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em size}]Number of elements to be included \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classgrassmann_1_1Vector_1c53c0f4829396b3db7aa4096d37d605}{
+\index{grassmann::Vector@{grassmann::Vector}!norm2@{norm2}}
+\index{norm2@{norm2}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[norm2]{\setlength{\rightskip}{0pt plus 5cm}double grassmann::Vector::norm2 ()}}
+\label{classgrassmann_1_1Vector_1c53c0f4829396b3db7aa4096d37d605}
+
+
+Gets the 2-norm of a double vector of size n. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em v}]\hyperlink{classgrassmann_1_1Vector}{Vector} \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]2-norm (Euclidean distance) \end{Desc}
+\hypertarget{classgrassmann_1_1Vector_ff6d641099c55e400a9116415fa86c6c}{
+\index{grassmann::Vector@{grassmann::Vector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[operator[]]{\setlength{\rightskip}{0pt plus 5cm}double\& grassmann::Vector::operator\mbox{[}$\,$\mbox{]} (size\_\-t {\em i})  throw ({\bf IndexOutOfBoundsException})}}
+\label{classgrassmann_1_1Vector_ff6d641099c55e400a9116415fa86c6c}
+
+
+Gets the i-th member of a vector. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em i}]Index to get \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The value to be read, if exists \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1IndexOutOfBoundsException}{IndexOutOfBoundsException}}]If trying to access an index outside of the vector \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Vector_69966901d7ffcd3f0df9ffd37a637a1c}{
+\index{grassmann::Vector@{grassmann::Vector}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[operator$<$$<$]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}\& grassmann::Vector::operator$<$$<$ (double {\em element})}}
+\label{classgrassmann_1_1Vector_69966901d7ffcd3f0df9ffd37a637a1c}
+
+
+\hypertarget{classgrassmann_1_1Vector_9ca025b6499bf75f21295c3fa49d03b4}{
+\index{grassmann::Vector@{grassmann::Vector}!size@{size}}
+\index{size@{size}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[size]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t grassmann::Vector::size ()}}
+\label{classgrassmann_1_1Vector_9ca025b6499bf75f21295c3fa49d03b4}
+
+
+Gets the size of the vector. 
+
+\hypertarget{classgrassmann_1_1Vector_5b66d2b06688e0e4abfb7a2d62c73f35}{
+\index{grassmann::Vector@{grassmann::Vector}!max@{max}}
+\index{max@{max}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[max]{\setlength{\rightskip}{0pt plus 5cm}double grassmann::Vector::max ()}}
+\label{classgrassmann_1_1Vector_5b66d2b06688e0e4abfb7a2d62c73f35}
+
+
+Gets the maximum element of a vector. 
+
+\hypertarget{classgrassmann_1_1Vector_b291b7fed796d989e4448c240857cf63}{
+\index{grassmann::Vector@{grassmann::Vector}!push\_\-back@{push\_\-back}}
+\index{push\_\-back@{push\_\-back}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[push\_\-back]{\setlength{\rightskip}{0pt plus 5cm}void grassmann::Vector::push\_\-back (double {\em el})}}
+\label{classgrassmann_1_1Vector_b291b7fed796d989e4448c240857cf63}
+
+
+Push a new element into the array. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em el}]Element to be pushed \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Vector_233859ed21cd1cbba69d240de0cf2ba3}{
+\index{grassmann::Vector@{grassmann::Vector}!isNull@{isNull}}
+\index{isNull@{isNull}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[isNull]{\setlength{\rightskip}{0pt plus 5cm}bool grassmann::Vector::isNull ()}}
+\label{classgrassmann_1_1Vector_233859ed21cd1cbba69d240de0cf2ba3}
+
+
+Checks if the vector contains only null elements. 
+
+\begin{Desc}
+\item[Returns:]true if is empty, false otherwise \end{Desc}
+\hypertarget{classgrassmann_1_1Vector_96dd7bb0a8a2620e34b8a3ac1342deff}{
+\index{grassmann::Vector@{grassmann::Vector}!multiple@{multiple}}
+\index{multiple@{multiple}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[multiple]{\setlength{\rightskip}{0pt plus 5cm}bool grassmann::Vector::multiple ({\bf Vector} {\em v1})}}
+\label{classgrassmann_1_1Vector_96dd7bb0a8a2620e34b8a3ac1342deff}
+
+
+Checks if a vector is multiple of another (e.g. 
+
+linear dependent) \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em v1}]\hyperlink{classgrassmann_1_1Vector}{Vector} to be compared \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if the vector are linear dependent, false otherwise \end{Desc}
+\hypertarget{classgrassmann_1_1Vector_c43808ba1c06b8e502b6a4430c674bd4}{
+\index{grassmann::Vector@{grassmann::Vector}!clear@{clear}}
+\index{clear@{clear}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[clear]{\setlength{\rightskip}{0pt plus 5cm}void grassmann::Vector::clear ()}}
+\label{classgrassmann_1_1Vector_c43808ba1c06b8e502b6a4430c674bd4}
+
+
+Clears the vector. 
+
+\hypertarget{classgrassmann_1_1Vector_2101413da90bea7fd2c911342b48cb60}{
+\index{grassmann::Vector@{grassmann::Vector}!toString@{toString}}
+\index{toString@{toString}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[toString]{\setlength{\rightskip}{0pt plus 5cm}std::string grassmann::Vector::toString ()}}
+\label{classgrassmann_1_1Vector_2101413da90bea7fd2c911342b48cb60}
+
+
+Return the vector's content as a string. 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classgrassmann_1_1Vector_802964ed6ee76e3b82662c7b0bfa251a}{
+\index{grassmann::Vector@{grassmann::Vector}!operator+@{operator+}}
+\index{operator+@{operator+}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[operator+]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} operator+ ({\bf Vector} \& {\em a}, \/  {\bf Vector} \& {\em b})  throw ({\bf UnequalVectorSizeException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Vector_802964ed6ee76e3b82662c7b0bfa251a}
+
+
+Sum of two vectors. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]First vector \item[{\em b}]Second vector \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The vector that represents the sum between a and b \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1UnequalVectorSizeException}{UnequalVectorSizeException}}]If the size of a and b is not the same \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Vector_ac3997b0f5002019c4373e8f9005f85b}{
+\index{grassmann::Vector@{grassmann::Vector}!operator-@{operator-}}
+\index{operator-@{operator-}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[operator-]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} operator- ({\bf Vector} \& {\em a}, \/  {\bf Vector} \& {\em b})  throw ({\bf UnequalVectorSizeException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Vector_ac3997b0f5002019c4373e8f9005f85b}
+
+
+Difference between two vectors. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]First vector \item[{\em b}]Second vector \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The vector that represents the difference between a and b \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1UnequalVectorSizeException}{UnequalVectorSizeException}}]If the size of a and b is not the same \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Vector_cd40ad4e72bc86ac3fbf725cf8184d2d}{
+\index{grassmann::Vector@{grassmann::Vector}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[operator$\ast$]{\setlength{\rightskip}{0pt plus 5cm}double operator$\ast$ ({\bf Vector} \& {\em a}, \/  {\bf Vector} \& {\em b})  throw ({\bf UnequalVectorSizeException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Vector_cd40ad4e72bc86ac3fbf725cf8184d2d}
+
+
+Scalar product between two vectors. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]First vector \item[{\em b}]Second vector \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Scalar product \end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1UnequalVectorSizeException}{UnequalVectorSizeException}}]If the size of a and b is not the same \end{description}
+\end{Desc}
+\hypertarget{classgrassmann_1_1Vector_e5f388dfbc55ca5afce80591fbfdcd67}{
+\index{grassmann::Vector@{grassmann::Vector}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[operator$\ast$]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} operator$\ast$ (double {\em l}, \/  {\bf Vector} {\em v})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Vector_e5f388dfbc55ca5afce80591fbfdcd67}
+
+
+Product between a vector and a scalar. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em l}]The scalar \item[{\em v}]The vector \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The product l$\ast$v \end{Desc}
+\hypertarget{classgrassmann_1_1Vector_0b7d545365b106c4a84d6970964ab56c}{
+\index{grassmann::Vector@{grassmann::Vector}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[operator$\ast$]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector} operator$\ast$ ({\bf Vector} {\em v}, \/  double {\em l})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Vector_0b7d545365b106c4a84d6970964ab56c}
+
+
+\hypertarget{classgrassmann_1_1Vector_5d46747ad1ba11f461f4db8945e9bedf}{
+\index{grassmann::Vector@{grassmann::Vector}!operator==@{operator==}}
+\index{operator==@{operator==}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[operator==]{\setlength{\rightskip}{0pt plus 5cm}bool operator== ({\bf Vector} {\em a}, \/  {\bf Vector} {\em b})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Vector_5d46747ad1ba11f461f4db8945e9bedf}
+
+
+Check if two vectors are equal, i.e. 
+
+if their size is the same and all of their elements are equal \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]First vector \item[{\em b}]Second vector \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if they are equal, false otherwise \end{Desc}
+\hypertarget{classgrassmann_1_1Vector_a73d83b4b0d593774cdbc7874ef72e81}{
+\index{grassmann::Vector@{grassmann::Vector}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[operator"!=]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= ({\bf Vector} {\em a}, \/  {\bf Vector} {\em b})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Vector_a73d83b4b0d593774cdbc7874ef72e81}
+
+
+Check if two vectors are different, i.e. 
+
+if their size is not the same or their elements are different \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]First vector \item[{\em b}]Second vector \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]true if they are different, false otherwise \end{Desc}
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+\hyperlink{grassmann_8hpp}{grassmann.hpp}\end{CompactItemize}

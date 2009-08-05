@@ -1,0 +1,35 @@
+\hypertarget{grassmann_8hpp}{
+\section{grassmann.hpp File Reference}
+\label{grassmann_8hpp}\index{grassmann.hpp@{grassmann.hpp}}
+}
+{\tt \#include $<$iostream$>$}\par
+{\tt \#include $<$vector$>$}\par
+{\tt \#include \char`\"{}grassmann\_\-exception.hpp\char`\"{}}\par
+\subsection*{Namespaces}
+\begin{CompactItemize}
+\item 
+namespace \hyperlink{namespacegrassmann}{grassmann}
+\end{CompactItemize}
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class \hyperlink{classgrassmann_1_1Vector}{grassmann::Vector}
+\begin{CompactList}\small\item\em Class for operations on vectors. \item\end{CompactList}\item 
+class \hyperlink{classgrassmann_1_1Matrix}{grassmann::Matrix}
+\begin{CompactList}\small\item\em Class for operations on matrices. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+Vector \hyperlink{namespacegrassmann_bc7cc2e4f7133d5867c3eeb29c506f2b}{grassmann::solve} (Matrix a, Vector coeff)  throw (NotSquareMatrixException, UndefinedSystemException)
+\begin{CompactList}\small\item\em Solves a linear system, for which is given the matrix a of variables' coefficients and the vector coeff of numeric coefficients. \item\end{CompactList}\item 
+Matrix \hyperlink{namespacegrassmann_52c01a5f35814c18bdd1af4674378470}{grassmann::identityMatrix} (size\_\-t n)
+\begin{CompactList}\small\item\em Return the identity matrix (i.e. \item\end{CompactList}\item 
+Vector \hyperlink{namespacegrassmann_f05f7cfa12aaac77dbbd4bb494e74972}{grassmann::nullVector} (size\_\-t n)
+\begin{CompactList}\small\item\em Return the null vector by size n. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Version:]0.2 \end{Desc}
+\begin{Desc}
+\item[Author:]BlackLight $<$ \href{mailto:blacklight@autistici.org}{\tt blacklight@autistici.org} $>$ \end{Desc}
