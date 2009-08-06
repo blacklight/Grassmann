@@ -3,7 +3,7 @@ INCLUDEDIR=include
 PREFIX=/usr
 LIB=grassmann
 CC=g++
-CLAGS=-Wall -pedantic -pedantic-errors
+CFLAGS=-Wall -pedantic -pedantic-errors
 
 all:
 	${CC} -I${INCLUDEDIR} ${CFLAGS} -fPIC -g -c ${SRCDIR}/matrix.cpp

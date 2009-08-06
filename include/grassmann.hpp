@@ -52,7 +52,6 @@
 #ifndef _GRASSMANN_H
 #define _GRASSMANN_H
 
-#include <iostream>
 #include <vector>
 #include "grassmann_exception.hpp"
 
@@ -472,7 +471,7 @@ public:
 	 * @exception NullMatrixDiagException If the matrix has null elements along the diagonal and they can't be reduced
 	 */
 		friend Matrix triang(Matrix m) throw(NullMatrixDiagException);
-		friend Matrix triang(Matrix m, int &steps) throw(NullMatrixDiagException);
+		friend Matrix triang(Matrix m, size_t &steps) throw(NullMatrixDiagException);
 
 	/**
 	 * @brief Tries to validate a matrix (i.e. removing eventual null rows or column or linear dependent rows or columns)
@@ -487,7 +486,7 @@ public:
 	 * @return Reference to the validated matrix
 	 * @exception NullMatrixDiagException If the matrix has null elements along the diagonal and they can't be reduced
 	 */
-		Matrix validate(int &steps) throw(NullMatrixDiagException);
+		Matrix validate(size_t &steps) throw(NullMatrixDiagException);
 
 	/**
 	 * @brief Tries to validate a matrix (i.e. removing eventual null rows or column or linear dependent rows or columns)

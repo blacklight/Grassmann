@@ -48,7 +48,10 @@
 #include "grassmann.hpp"
 #include "grassmann_exception.hpp"
 
-using namespace std;
+using std::vector;
+using std::string;
+using std::stringstream;
+using std::exception;
 
 namespace grassmann  {
 Matrix::Matrix()  {}
@@ -108,7 +111,7 @@ string Matrix::toString()  {
 			stringstream tmps (stringstream::in | stringstream::out);
 			tmps << matrix[i][j];
 
-			for (int k=0; k < maxlen[j] - tmps.str().length(); k++)
+			for (size_t k=0; k < maxlen[j] - tmps.str().length(); k++)
 				ss << " ";
 
 			if (j == cols()-1)
@@ -141,7 +144,7 @@ Matrix& operator- (Matrix a, Matrix b) throw(UnequalMatrixSizeException)  {
 	Matrix *c = new Matrix(a.rows(), a.cols());
 
 	for (size_t i=0; i < c->rows(); i++)
-		for (int j=0; j < c->cols(); j++)
+		for (size_t j=0; j < c->cols(); j++)
 			c->matrix[i][j] = a(i,j) - b(i,j);
 
 	return *c;
@@ -233,7 +236,7 @@ void Matrix::insertColumn (size_t index, ...) throw(InvalidMatrixIndexException)
 	va_list col;
 	va_start(col, index);
 
-	for (int i=0; i < rows(); i++)  {
+	for (size_t i=0; i < rows(); i++)  {
 		double val = va_arg(col,double);
 		matrix[i][index] = val;
 	}
@@ -248,7 +251,7 @@ void Matrix::insertRow (Vector v, size_t index) throw(InvalidMatrixIndexExceptio
 	if (v.size() != cols())
 		throw InvalidMatrixIndexException();
 
-	for (int i=0; i < cols(); i++)
+	for (size_t i=0; i < cols(); i++)
 		matrix[index][i] = (double) v[i];
 }
 
@@ -259,7 +262,7 @@ void Matrix::insertRow (size_t index, ...) throw(InvalidMatrixIndexException)  {
 	va_list row;
 	va_start(row, index);
 
-	for (int i=0; i < cols(); i++)  {
+	for (size_t i=0; i < cols(); i++)  {
 		double val = va_arg(row,double);
 		matrix[index][i] = val;
 	}
@@ -268,7 +271,7 @@ void Matrix::insertRow (size_t index, ...) throw(InvalidMatrixIndexException)  {
 }
 
 Matrix Matrix::validate() throw(NullMatrixDiagException) {
-	int steps=0;
+	size_t steps=0;
 	size_t min = (rows() < cols()) ? rows() : cols();
 	bool valid = true;
 	Matrix m;
@@ -308,7 +311,7 @@ Matrix Matrix::validate() throw(NullMatrixDiagException) {
 	return m;
 }
 
-Matrix Matrix::validate(int& steps) throw(NullMatrixDiagException)  {
+Matrix Matrix::validate(size_t& steps) throw(NullMatrixDiagException)  {
 	steps=0;
 	size_t min = (rows() < cols()) ? rows() : cols();
 	bool valid=true;
@@ -348,7 +351,7 @@ Matrix Matrix::validate(int& steps) throw(NullMatrixDiagException)  {
 }
 
 Matrix Matrix::validate(Vector& v) throw(NullMatrixDiagException)  {
-	int steps=0;
+	size_t steps=0;
 	size_t min = (rows() < cols()) ? rows() : cols();
 	bool valid=true;
 	Matrix m;
@@ -403,11 +406,11 @@ Matrix Matrix::validate(Vector& v) throw(NullMatrixDiagException)  {
 	return m;
 }
 
-Matrix triang(Matrix m, int& steps) throw(NullMatrixDiagException)  {
+Matrix triang(Matrix m, size_t& steps) throw(NullMatrixDiagException)  {
 	Vector v;
 	Matrix a(m);
 
-	for (int n=0; n < a.cols(); n++)  {
+	for (size_t n=0; n < a.cols(); n++)  {
 		Matrix b(a.rows(), a.cols());
 		v.clear();
 
@@ -420,7 +423,7 @@ Matrix triang(Matrix m, int& steps) throw(NullMatrixDiagException)  {
 
 		double pivot = a.matrix[n][n];
 
-		for (int i=0; i < a.rows(); i++)  {
+		for (size_t i=0; i < a.rows(); i++)  {
 			if (i<n)
 				v.push_back(0);
 			else if (i==n)
@@ -434,11 +437,11 @@ Matrix triang(Matrix m, int& steps) throw(NullMatrixDiagException)  {
 
 		b.insertColumn(v,n);
 		
-		for (int i=0; i < a.cols(); i++)  {
+		for (size_t i=0; i < a.cols(); i++)  {
 			if (i!=n)  {
 				v.clear();
 
-				for (int j=0; j < a.rows(); j++)  {
+				for (size_t j=0; j < a.rows(); j++)  {
 					if (i==j)
 						v.push_back(1);
 					else
@@ -528,7 +531,7 @@ double Matrix::det() throw(NotSquareMatrixException)  {
 
 	Matrix a(*this);
 
-	int steps=0;
+	size_t steps=0;
 	Matrix c(a.rows(), a.cols());
 
 	try  {
@@ -606,7 +609,7 @@ Vector solve (Matrix a, Vector coeff) throw(NotSquareMatrixException, UndefinedS
 		coeff = b*coeff;
 	}
 
-	for (int i = coeff.size()-1; i >= 0; i--)  {
+	for (size_t i = coeff.size()-1; i >= 0; i--)  {
 		double tmp=0.0;
 		
 		for (size_t j=i+1; j<x.size(); j++)
@@ -687,7 +690,7 @@ Matrix Matrix::removeMultipleRows()  {
 	Matrix b(rows() - dup.size(), cols());
 	int pos = 0;
 
-	for (int i=0; i < rows(); i++)  {
+	for (size_t i=0; i < rows(); i++)  {
 		if (!binary_search(dup.begin(), dup.end(), i))  {
 			Vector row = rowAt(i);
 			b.insertRow(row,pos++);
@@ -703,7 +706,7 @@ Matrix Matrix::removeMultipleCols()  {
 	for (size_t i=0; i < cols(); i++)  {
 		Vector col1 = colAt(i);
 
-		for (int j=i; j<cols(); j++)  {
+		for (size_t j=i; j<cols(); j++)  {
 			if (i!=j)  {
 				Vector col2 = colAt(j);
 
@@ -730,14 +733,14 @@ Matrix Matrix::removeMultipleCols()  {
 Matrix Matrix::removeNullRows()  {
 	vector<int> nulls;
 
-	for (int i=0; i<rows(); i++)
+	for (size_t i=0; i<rows(); i++)
 		if (rowAt(i).isNull())
 			nulls.push_back(i);
 
 	Matrix b( rows()-nulls.size(), cols() );
 	int pos=0;
 
-	for (int i=0; i<rows(); i++)  {
+	for (size_t i=0; i<rows(); i++)  {
 		if (!binary_search(nulls.begin(), nulls.end(), i))  {
 			Vector tmp = rowAt(i);
 			b.insertRow(tmp,pos++);
@@ -750,14 +753,14 @@ Matrix Matrix::removeNullRows()  {
 Matrix Matrix::removeNullCols()  {
 	vector<int> nulls;
 
-	for (int i=0; i<cols(); i++)
+	for (size_t i=0; i<cols(); i++)
 		if (colAt(i).isNull())
 			nulls.push_back(i);
 
 	Matrix b( rows(), cols()-nulls.size() );
 	int pos=0;
 
-	for (int i=0; i<cols(); i++)  {
+	for (size_t i=0; i<cols(); i++)  {
 		if (!binary_search(nulls.begin(), nulls.end(), i))  {
 			Vector tmp = colAt(i);
 			b.insertColumn(tmp,pos++);
@@ -776,7 +779,7 @@ size_t Matrix::rank()  {
 
 	Matrix a(rows(), cols());
 
-	for (int i=0; i<r; i++)
+	for (size_t i=0; i<r; i++)
 		a.insertColumn(colAt(i),i);
 
 	try  {
@@ -805,8 +808,8 @@ size_t Matrix::rank()  {
 			continue;
 		}
 
-		for (int i=0; i<r; i++)
-			for (int j=0; j<r; j++)
+		for (size_t i=0; i<r; i++)
+			for (size_t j=0; j<r; j++)
 				b.matrix[i][j] = a.matrix[i][j];
 
 		try  {
@@ -823,10 +826,10 @@ size_t Matrix::rank()  {
 double Matrix::norm_inf()  {
 	double t,norm=0;
 
-	for (int i=0; i<rows(); i++)  {
+	for (size_t i=0; i<rows(); i++)  {
 		t=0;
 		
-		for (int j=0; j<cols(); j++)
+		for (size_t j=0; j<cols(); j++)
 			t += abs(matrix[i][j]);
 
 		if (t>norm)
@@ -839,10 +842,10 @@ double Matrix::norm_inf()  {
 double Matrix::norm1()  {
 	double t,norm=0;
 
-	for (int j=0; j<cols(); j++)  {
+	for (size_t j=0; j<cols(); j++)  {
 		t=0;
 
-		for (int i=0; i<rows(); i++)
+		for (size_t i=0; i<rows(); i++)
 			t += abs(matrix[i][j]);
 
 		if (t>norm)

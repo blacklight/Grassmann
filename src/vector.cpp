@@ -47,13 +47,16 @@
 #include "grassmann.hpp"
 #include "grassmann_exception.hpp"
 
-using namespace std;
+using std::vector;
+using std::string;
+using std::stringstream;
+using std::exception;
 
 namespace grassmann  {
 double Vector::norm2()  {
 	double res = 0;
 
-	for (int i=0; i < v.size(); i++)
+	for (size_t i=0; i < v.size(); i++)
 		res += v[i]*v[i];
 
 	return sqrt(res);
@@ -65,7 +68,7 @@ Vector operator+ (Vector& a, Vector& b) throw(UnequalVectorSizeException)  {
 	if (a.size() != b.size())
 		throw UnequalVectorSizeException();
 
-	for (int i=0; i < a.size(); i++)
+	for (size_t i=0; i < a.size(); i++)
 		c.push_back(a[i] + b[i]);
 
 	return c;
@@ -77,7 +80,7 @@ Vector operator- (Vector& a, Vector& b) throw(UnequalVectorSizeException)  {
 	if (a.size() != b.size())
 		throw UnequalVectorSizeException();
 
-	for (int i=0; i < a.size(); i++)
+	for (size_t i=0; i < a.size(); i++)
 		c.push_back(a[i] - b[i]);
 
 	return c;
@@ -89,7 +92,7 @@ double operator* (Vector& a, Vector& b) throw(UnequalVectorSizeException)  {
 	if (a.size() != b.size())
 		throw UnequalVectorSizeException();
 
-	for (int i=0; i < a.size(); i++)
+	for (size_t i=0; i < a.size(); i++)
 		res += a[i]*b[i];
 
 	return res;
@@ -157,7 +160,7 @@ double Vector::max()  {
 
 	double M = v[0];
 
-	for (int i=0; i<v.size(); i++)  {
+	for (size_t i=0; i<v.size(); i++)  {
 		if (v[i]>M)
 			M=v[i];
 	}
@@ -174,7 +177,7 @@ Vector::Vector (vector<double> v)  {
 Vector::Vector (double *vect, size_t size)  {
 	v.clear();
 
-	for (int i=0; i < size; i++)
+	for (size_t i=0; i < size; i++)
 		v.push_back(vect[i]);
 }
 
@@ -194,7 +197,7 @@ void Vector::push_back (double el)  {
 }
 
 bool Vector::isNull()  {
-	for (int i=0; i < size(); i++)
+	for (size_t i=0; i < size(); i++)
 		if (v[i]!=0)
 			return false;
 	return true;
@@ -209,7 +212,7 @@ bool Vector::multiple(Vector v1)  {
 
 	double pivot = v[0]/v1[0];
 
-	for (int i=0; i < size(); i++)  {
+	for (size_t i=0; i < size(); i++)  {
 		if (v1[i]==0)  {
 			if (v[i]!=0)
 				return false;
