@@ -1,3 +1,16 @@
+---- 0.2.1 release ---
+
+2008-08-07 BlackLight <blacklight@autistici.org>
+
+	* Makefile: Changed to make everything compliant with -Wall -pedantic
+	-pedantic-errors
+
+	* matrix.cpp: Fixing to make the code cleaner
+	* vector.cpp: Fixing to make the code cleaner
+
+
+--- 0.2 release ---
+
 2009-08-05 BlackLight <blacklight@autistici.org>
 
 	* matrix.cpp: Too many changes to be listed here
