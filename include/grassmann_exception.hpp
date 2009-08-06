@@ -63,7 +63,7 @@ namespace grassmann {
 		public:
 			UnequalMatrixSizeException() {}
 
-			const char* what() {
+			const char* what() const throw()  {
 				return "Invalid operation between matrixes with incompatible sizes";
 			}
 	};
@@ -76,7 +76,7 @@ namespace grassmann {
 		public:
 			InvalidMatrixIndexException() {}
 			
-			const char* what() {
+			const char* what() const throw() {
 				return "Trying access to an invalid index for the matrix";
 			}
 	};
@@ -89,7 +89,7 @@ namespace grassmann {
 		public:
 			NullMatrixDiagException() {}
 			
-			const char* what() {
+			const char* what() const throw() {
 				return "Singular matrix";
 			}
 	};
@@ -102,7 +102,7 @@ namespace grassmann {
 		public:
 			NotSquareMatrixException() {}
 			
-			const char* what() {
+			const char* what() const throw() {
 				return "The given matrix is not square";
 			}
 	};
@@ -114,7 +114,7 @@ namespace grassmann {
 	class UndefinedSystemException : public std::exception {
 		public:
 			UndefinedSystemException() {}
-			const char* what() {
+			const char* what() const throw() {
 				return "The given linear system is undefined";
 			}
 	};
@@ -128,7 +128,7 @@ namespace grassmann {
 		public:
 			UnequalVectorSizeException() {}
 			
-			const char* what() {
+			const char* what() const throw() {
 				return "The size of the two vectors is not the same";
 			}
 	};
@@ -140,7 +140,9 @@ namespace grassmann {
 
 	class IndexOutOfBoundsException : public std::exception {
 		public:
-			IndexOutOfBoundsException() {} const char* what() {
+			IndexOutOfBoundsException() {}
+			
+			const char* what() const throw() {
 				return "Index out of bounds";
 			}
 	};
@@ -154,7 +156,7 @@ namespace grassmann {
 		public:
 			SingularMatrixException() {}
 			
-			const char* what() {
+			const char* what() const throw() {
 				return "The matrix is singular";
 			}
 	};
