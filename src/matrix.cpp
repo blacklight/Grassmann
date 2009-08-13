@@ -61,7 +61,7 @@ Matrix::Matrix(const Matrix &m)  {
 }
 
 Matrix::Matrix(double **m, size_t r, size_t c)  {
-	matrix = vector< vector<double> >(r);
+	matrix = vector<Vector>(r);
 
 	for (size_t i=0; i<r; i++)
 		for (size_t j=0; j<c; j++)
@@ -69,7 +69,7 @@ Matrix::Matrix(double **m, size_t r, size_t c)  {
 }
 
 Matrix::Matrix(size_t r, size_t c)  {
-	matrix = vector< vector<double> >(r);
+	matrix = vector<Vector>(r);
 
 	for (size_t i=0; i<r; i++)
 		matrix[i] = vector<double>(c, 0.0);
@@ -114,9 +114,12 @@ string Matrix::toString()  {
 			for (size_t k=0; k < maxlen[j] - tmps.str().length(); k++)
 				ss << " ";
 
-			if (j == cols()-1)
-				ss << ")\n";
-			else
+			if (j == cols()-1)  {
+				ss << ")";
+
+				if (i < rows()-1)
+					ss << std::endl;
+			} else
 				ss << "  ";
 		}
 	}
@@ -214,8 +217,18 @@ bool operator!= (Matrix a, Matrix b)  {
 double& Matrix::operator() (size_t i, size_t j) throw(InvalidMatrixIndexException)  {
 	if (i >= rows())
 		throw InvalidMatrixIndexException();
+	
+	if (j >= cols())
+		throw InvalidMatrixIndexException();
 
 	return matrix[i][j];
+}
+
+Vector& Matrix::operator[] (size_t i) throw (InvalidMatrixIndexException)  {
+	if (i >= rows())
+		throw InvalidMatrixIndexException();
+
+	return matrix[i];
 }
 
 void Matrix::insertColumn (Vector v, size_t index) throw(InvalidMatrixIndexException)  {

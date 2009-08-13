@@ -60,9 +60,11 @@ size\_\-t \hyperlink{classgrassmann_1_1Matrix_6eb4516b1eba6ede777894c17e0fa39f}{
 \begin{CompactList}\small\item\em Return the transposed matrix. \item\end{CompactList}\item 
 double \& \hyperlink{classgrassmann_1_1Matrix_9073db52849385a50a1e7d9ba2b5c18c}{operator()} (size\_\-t i, size\_\-t j)  throw (InvalidMatrixIndexException)
 \begin{CompactList}\small\item\em Re-definition of '()' operator to access the elements of a matrix. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector}{Vector} \& \hyperlink{classgrassmann_1_1Matrix_56cba19a9553970aa047925ec8c0dd07}{operator\mbox{[}$\,$\mbox{]}} (size\_\-t i)  throw (InvalidMatrixIndexException)
+\begin{CompactList}\small\item\em Return the i-th row of the matrix. \item\end{CompactList}\item 
 \hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_ebdbbb13e0261f2c1af0f049e28adf89}{validate} ()  throw (NullMatrixDiagException)
 \begin{CompactList}\small\item\em Tries to validate a matrix (i.e. \item\end{CompactList}\item 
-\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_12e27a7a60f30c44f36263151b367774}{validate} (int \&steps)  throw (NullMatrixDiagException)
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_400d47ca9b0e1d7bd4ad731415a83bca}{validate} (size\_\-t \&steps)  throw (NullMatrixDiagException)
 \begin{CompactList}\small\item\em Tries to validate a matrix (i.e. \item\end{CompactList}\item 
 \hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_71fb0021c0942ad8f9e0c1bcee78ae61}{validate} (\hyperlink{classgrassmann_1_1Vector}{Vector} \&v)  throw (NullMatrixDiagException)
 \begin{CompactList}\small\item\em Tries to validate a matrix (i.e. \item\end{CompactList}\item 
@@ -99,7 +101,7 @@ bool \hyperlink{classgrassmann_1_1Matrix_8cbc99e34ef59ed0adefd4f425705724}{opera
 \begin{CompactList}\small\item\em Check if two matrices are not equal (i.e. \item\end{CompactList}\item 
 \hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_38aaf4ec8160006c88070b706925492d}{triang} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} m)  throw (NullMatrixDiagException)
 \begin{CompactList}\small\item\em Returns a triangular matrix associated to our matrix through Gauss' method. \item\end{CompactList}\item 
-\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_8f41e07e9806c67a29a10416a430f579}{triang} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} m, int \&steps)  throw (NullMatrixDiagException)
+\hyperlink{classgrassmann_1_1Matrix}{Matrix} \hyperlink{classgrassmann_1_1Matrix_f911ce47206805cf2da81b2f3ea1982b}{triang} (\hyperlink{classgrassmann_1_1Matrix}{Matrix} m, size\_\-t \&steps)  throw (NullMatrixDiagException)
 \end{CompactItemize}
 
 
@@ -426,6 +428,25 @@ To access the elements of a matrix you will use parenthesis. e.g.:\small\begin{a
 \end{Desc}
 \end{alltt}
 \normalsize 
+\hypertarget{classgrassmann_1_1Matrix_56cba19a9553970aa047925ec8c0dd07}{
+\index{grassmann::Matrix@{grassmann::Matrix}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!grassmann::Matrix@{grassmann::Matrix}}
+\subsubsection[operator[]]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}\& grassmann::Matrix::operator\mbox{[}$\,$\mbox{]} (size\_\-t {\em i})  throw ({\bf InvalidMatrixIndexException})}}
+\label{classgrassmann_1_1Matrix_56cba19a9553970aa047925ec8c0dd07}
+
+
+Return the i-th row of the matrix. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em i}]Index to be accessed \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Exceptions:]
+\begin{description}
+\item[{\em \hyperlink{classgrassmann_1_1InvalidMatrixIndexException}{InvalidMatrixIndexException}}]If trying to access an index outside of the matrix \end{description}
+\end{Desc}
 \hypertarget{classgrassmann_1_1Matrix_ebdbbb13e0261f2c1af0f049e28adf89}{
 \index{grassmann::Matrix@{grassmann::Matrix}!validate@{validate}}
 \index{validate@{validate}!grassmann::Matrix@{grassmann::Matrix}}
@@ -442,11 +463,11 @@ removing eventual null rows or column or linear dependent rows or columns) \begi
 \begin{description}
 \item[{\em \hyperlink{classgrassmann_1_1NullMatrixDiagException}{NullMatrixDiagException}}]If the matrix has null elements along the diagonal and they can't be reduced \end{description}
 \end{Desc}
-\hypertarget{classgrassmann_1_1Matrix_12e27a7a60f30c44f36263151b367774}{
+\hypertarget{classgrassmann_1_1Matrix_400d47ca9b0e1d7bd4ad731415a83bca}{
 \index{grassmann::Matrix@{grassmann::Matrix}!validate@{validate}}
 \index{validate@{validate}!grassmann::Matrix@{grassmann::Matrix}}
-\subsubsection[validate]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} grassmann::Matrix::validate (int \& {\em steps})  throw ({\bf NullMatrixDiagException})}}
-\label{classgrassmann_1_1Matrix_12e27a7a60f30c44f36263151b367774}
+\subsubsection[validate]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} grassmann::Matrix::validate (size\_\-t \& {\em steps})  throw ({\bf NullMatrixDiagException})}}
+\label{classgrassmann_1_1Matrix_400d47ca9b0e1d7bd4ad731415a83bca}
 
 
 Tries to validate a matrix (i.e. 
@@ -725,11 +746,11 @@ To be done if and only if the matrix is not singular, else an exception will be 
 \begin{description}
 \item[{\em \hyperlink{classgrassmann_1_1NullMatrixDiagException}{NullMatrixDiagException}}]If the matrix has null elements along the diagonal and they can't be reduced \end{description}
 \end{Desc}
-\hypertarget{classgrassmann_1_1Matrix_8f41e07e9806c67a29a10416a430f579}{
+\hypertarget{classgrassmann_1_1Matrix_f911ce47206805cf2da81b2f3ea1982b}{
 \index{grassmann::Matrix@{grassmann::Matrix}!triang@{triang}}
 \index{triang@{triang}!grassmann::Matrix@{grassmann::Matrix}}
-\subsubsection[triang]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} triang ({\bf Matrix} {\em m}, \/  int \& {\em steps})  throw ({\bf NullMatrixDiagException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
-\label{classgrassmann_1_1Matrix_8f41e07e9806c67a29a10416a430f579}
+\subsubsection[triang]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix} triang ({\bf Matrix} {\em m}, \/  size\_\-t \& {\em steps})  throw ({\bf NullMatrixDiagException})\hspace{0.3cm}{\tt  \mbox{[}friend\mbox{]}}}}
+\label{classgrassmann_1_1Matrix_f911ce47206805cf2da81b2f3ea1982b}
 
 
 

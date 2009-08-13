@@ -18,8 +18,12 @@ Class for operations on vectors.
 \begin{CompactList}\small\item\em Constructor, given a double\mbox{[}\mbox{]} array. \item\end{CompactList}\item 
 \hyperlink{classgrassmann_1_1Vector_62ece542ba7c51a22866f6b8514f33ef}{Vector} (size\_\-t size,...)
 \begin{CompactList}\small\item\em Constructor, given a list of double values. \item\end{CompactList}\item 
+\hyperlink{classgrassmann_1_1Vector_dc3bff059e17ba7d3b71310d4cd01f0b}{Vector} (std::string, char delim= ',')
+\begin{CompactList}\small\item\em Constructor, returns a vector from a list of terms given as string, with a delimitator between each of them (default delimitator: ','). \item\end{CompactList}\item 
 double \hyperlink{classgrassmann_1_1Vector_1c53c0f4829396b3db7aa4096d37d605}{norm2} ()
 \begin{CompactList}\small\item\em Gets the 2-norm of a double vector of size n. \item\end{CompactList}\item 
+void \hyperlink{classgrassmann_1_1Vector_838a1376ed8e8d5bcb63ae71258711a4}{operator=} (std::string s)
+\begin{CompactList}\small\item\em Construct the vector from a string i.e. \item\end{CompactList}\item 
 double \& \hyperlink{classgrassmann_1_1Vector_ff6d641099c55e400a9116415fa86c6c}{operator\mbox{[}$\,$\mbox{]}} (size\_\-t i)  throw (IndexOutOfBoundsException)
 \begin{CompactList}\small\item\em Gets the i-th member of a vector. \item\end{CompactList}\item 
 \hyperlink{classgrassmann_1_1Vector}{Vector} \& \hyperlink{classgrassmann_1_1Vector_69966901d7ffcd3f0df9ffd37a637a1c}{operator$<$$<$} (double element)
@@ -116,6 +120,20 @@ Constructor, given a list of double values.
 \begin{description}
 \item[{\em size}]Number of elements to be included \end{description}
 \end{Desc}
+\hypertarget{classgrassmann_1_1Vector_dc3bff059e17ba7d3b71310d4cd01f0b}{
+\index{grassmann::Vector@{grassmann::Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[Vector]{\setlength{\rightskip}{0pt plus 5cm}grassmann::Vector::Vector (std::string, \/  char {\em delim} = {\tt ','})}}
+\label{classgrassmann_1_1Vector_dc3bff059e17ba7d3b71310d4cd01f0b}
+
+
+Constructor, returns a vector from a list of terms given as string, with a delimitator between each of them (default delimitator: ','). 
+
+i.e., \char`\"{}2,3,4\char`\"{} with delim = ',' will return a vector containing terms (2 3 4) \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em str}]String containing the terms \item[{\em delim}]Delimitator between each term \end{description}
+\end{Desc}
 
 
 \subsection{Member Function Documentation}
@@ -135,6 +153,20 @@ Gets the 2-norm of a double vector of size n.
 \end{Desc}
 \begin{Desc}
 \item[Returns:]2-norm (Euclidean distance) \end{Desc}
+\hypertarget{classgrassmann_1_1Vector_838a1376ed8e8d5bcb63ae71258711a4}{
+\index{grassmann::Vector@{grassmann::Vector}!operator=@{operator=}}
+\index{operator=@{operator=}!grassmann::Vector@{grassmann::Vector}}
+\subsubsection[operator=]{\setlength{\rightskip}{0pt plus 5cm}void grassmann::Vector::operator= (std::string {\em s})}}
+\label{classgrassmann_1_1Vector_838a1376ed8e8d5bcb63ae71258711a4}
+
+
+Construct the vector from a string i.e. 
+
+: \hyperlink{classgrassmann_1_1Vector}{Vector} v = \char`\"{}2,3,4\char`\"{}; \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em s}]String containing the elements of the vector (warning: you must use ',' as delimiter between the terms) \end{description}
+\end{Desc}
 \hypertarget{classgrassmann_1_1Vector_ff6d641099c55e400a9116415fa86c6c}{
 \index{grassmann::Vector@{grassmann::Vector}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!grassmann::Vector@{grassmann::Vector}}

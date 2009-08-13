@@ -1,6 +1,14 @@
----- 0.2.1 release ---
+2009-08-13 BlackLight <blacklight@autistici.org>
+	* grassmann.hpp: Introduced for the Vector class the constructor
+	Vector(std::string, char delim = ',') and the operator= (std::string).
+	Now it's possible constructing a Vector from a string.
+	I also redesigned the Matrix private object as std::vector<Vector>, so
+	I've redefined the operator[] of Matrix class to return a reference to
+	the i-th row, a reference you can set using a string.
 
-2008-08-07 BlackLight <blacklight@autistici.org>
+--- 0.2.1 release ---
+
+2009-08-07 BlackLight <blacklight@autistici.org>
 
 	* Makefile: Changed to make everything compliant with -Wall -pedantic
 	-pedantic-errors

@@ -41,7 +41,10 @@
 
 #include <string>
 #include <sstream>
+
+#include <cstdlib>
 #include <cstdarg>
+#include <cstring>
 #include <cmath>
 
 #include "grassmann.hpp"
@@ -123,18 +126,6 @@ Vector& Vector::operator<< (double element)  {
 	return *this;
 }
 
-/*	Vector *v = new Vector;
-
-	va_list elements;
-	va_start(elements,size);
-
-	for (size_t i=0; i < size; i++)
-		v->push_back(va_arg(elements, double));
-
-	va_end(elements);
-	return *v;
-}*/
-
 bool operator== (Vector a, Vector b)  {
 	if (a.size() != b.size())
 		return false;
@@ -148,6 +139,10 @@ bool operator== (Vector a, Vector b)  {
 
 bool operator!= (Vector a, Vector b)  {
 	return !(a == b);
+}
+
+void Vector::operator= (string s)  {
+	*this = Vector(s,',');
 }
 
 size_t Vector::size()  {
@@ -190,6 +185,31 @@ Vector::Vector (size_t size, ...)  {
 		v.push_back(va_arg(elements, double));
 
 	va_end(elements);
+}
+
+Vector::Vector (string s, char d)  {
+	char delim[2];
+	delim[0] = d;
+	delim[1] = 0;
+	v.clear();
+
+	char *tok;
+	char *str = new char[s.length()];
+	size_t len = 0;
+
+	for (size_t i=0; i < s.length(); i++)  {
+		if (s[i] != ' ' && s[i] != '\t' && s[i] != '\r' && s[i] != '\n')
+			str[len++] = s[i];
+	}
+
+	tok = strtok(str, delim);
+
+	while (tok)  {
+		v.push_back(atof(tok));
+		tok = strtok(NULL, delim);
+	}
+
+	delete [] str;
 }
 
 void Vector::push_back (double el)  {
@@ -241,7 +261,7 @@ string Vector::toString()  {
 		ss << " " << v[i] << " ";
 	}
 
-	ss << ")\n";
+	ss << ")";
 	return ss.str();
 }
 

@@ -1,5 +1,7 @@
 /**
  * Little program to get some information from a 2x2 arbitrary matrix
+ * After the installation of Grassmann, compile it using
+ * g++ -o example example.cpp -lgrassmann
  */
 
 #include <iostream>
@@ -17,20 +19,28 @@ int main()  {
 			cin >> A(i,j);
 		}
 
+	/**
+	 * If you, instead, would like to define a matrix through preset values:
+	 *
+	 * Matrix A(2,2);
+	 * A[0] = "1,2";
+	 * A[1] = "3,2";
+	 */
+
 	cout << "\nMatrix:\n\n"
-		<< A.toString() << endl
+		<< A.toString() << endl << endl
 		<< "rank: "
 		<< A.rank() << endl << endl
 		<< "product A*A:\n\n"
-		<< (A*A).toString() << endl;
+		<< (A*A).toString() << endl << endl;
 	
 	try  {
 		cout << "determinant: "
 			<< A.det() << endl << endl
 			<< "inverse matrix:\n\n"
-			<< A.inverse().toString() << endl
-			<< "eigenvalues (probably an approximation):\n\n"
-			<< A.eigenValues().toString();
+			<< A.inverse().toString() << endl << endl
+			<< "eigenvalues (probably an approximation):\n"
+			<< A.eigenValues().toString() << endl;
 	}
 
 	catch (SingularMatrixException e)  {

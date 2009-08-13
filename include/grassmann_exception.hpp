@@ -152,7 +152,7 @@ namespace grassmann {
  * @brief Exception raised when a square matrix is singular
  */
 
-	class SingularMatrixException:public std::exception {
+	class SingularMatrixException : public std::exception {
 		public:
 			SingularMatrixException() {}
 			

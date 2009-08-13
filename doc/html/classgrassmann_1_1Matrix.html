@@ -105,12 +105,15 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">double &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Matrix.html#9073db52849385a50a1e7d9ba2b5c18c">operator()</a> (size_t i, size_t j)  throw (InvalidMatrixIndexException)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Re-definition of '()' operator to access the elements of a matrix.  <a href="#9073db52849385a50a1e7d9ba2b5c18c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classgrassmann_1_1Vector.html">Vector</a> &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Matrix.html#56cba19a9553970aa047925ec8c0dd07">operator[]</a> (size_t i)  throw (InvalidMatrixIndexException)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the i-th row of the matrix.  <a href="#56cba19a9553970aa047925ec8c0dd07"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Matrix.html#ebdbbb13e0261f2c1af0f049e28adf89">validate</a> ()  throw (NullMatrixDiagException)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tries to validate a matrix (i.e.  <a href="#ebdbbb13e0261f2c1af0f049e28adf89"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Matrix.html#12e27a7a60f30c44f36263151b367774">validate</a> (int &amp;steps)  throw (NullMatrixDiagException)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Matrix.html#400d47ca9b0e1d7bd4ad731415a83bca">validate</a> (size_t &amp;steps)  throw (NullMatrixDiagException)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tries to validate a matrix (i.e.  <a href="#12e27a7a60f30c44f36263151b367774"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tries to validate a matrix (i.e.  <a href="#400d47ca9b0e1d7bd4ad731415a83bca"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Matrix.html#71fb0021c0942ad8f9e0c1bcee78ae61">validate</a> (<a class="el" href="classgrassmann_1_1Vector.html">Vector</a> &amp;v)  throw (NullMatrixDiagException)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tries to validate a matrix (i.e.  <a href="#71fb0021c0942ad8f9e0c1bcee78ae61"></a><br></td></tr>
@@ -159,7 +162,7 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Matrix.html#38aaf4ec8160006c88070b706925492d">triang</a> (<a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a> m)  throw (NullMatrixDiagException)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns a triangular matrix associated to our matrix through Gauss' method.  <a href="#38aaf4ec8160006c88070b706925492d"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Matrix.html#8f41e07e9806c67a29a10416a430f579">triang</a> (<a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a> m, int &amp;steps)  throw (NullMatrixDiagException)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Matrix.html#f911ce47206805cf2da81b2f3ea1982b">triang</a> (<a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a> m, size_t &amp;steps)  throw (NullMatrixDiagException)</td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
@@ -816,6 +819,38 @@ To access the elements of a matrix you will use parenthesis. e.g.:<pre>
 </pre>
 </div>
 </div><p>
+<a class="anchor" name="56cba19a9553970aa047925ec8c0dd07"></a><!-- doxytag: member="grassmann::Matrix::operator[]" ref="56cba19a9553970aa047925ec8c0dd07" args="(size_t i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgrassmann_1_1Vector.html">Vector</a>&amp; grassmann::Matrix::operator[]           </td>
+          <td>(</td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>i</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>  throw (<a class="el" href="classgrassmann_1_1InvalidMatrixIndexException.html">InvalidMatrixIndexException</a>)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the i-th row of the matrix. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>Index to be accessed </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Exceptions:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="classgrassmann_1_1InvalidMatrixIndexException.html" title="Exception raised when trying to access to a member of a matrix on an invalid position...">InvalidMatrixIndexException</a></em>&nbsp;</td><td>If trying to access an index outside of the matrix </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
 <a class="anchor" name="ebdbbb13e0261f2c1af0f049e28adf89"></a><!-- doxytag: member="grassmann::Matrix::validate" ref="ebdbbb13e0261f2c1af0f049e28adf89" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -843,14 +878,14 @@ removing eventual null rows or column or linear dependent rows or columns) <dl c
 
 </div>
 </div><p>
-<a class="anchor" name="12e27a7a60f30c44f36263151b367774"></a><!-- doxytag: member="grassmann::Matrix::validate" ref="12e27a7a60f30c44f36263151b367774" args="(int &amp;steps)" -->
+<a class="anchor" name="400d47ca9b0e1d7bd4ad731415a83bca"></a><!-- doxytag: member="grassmann::Matrix::validate" ref="400d47ca9b0e1d7bd4ad731415a83bca" args="(size_t &amp;steps)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classgrassmann_1_1Matrix.html">Matrix</a> grassmann::Matrix::validate           </td>
           <td>(</td>
-          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramtype">size_t &amp;&nbsp;</td>
           <td class="paramname"> <em>steps</em>          </td>
           <td>&nbsp;)&nbsp;</td>
           <td>  throw (<a class="el" href="classgrassmann_1_1NullMatrixDiagException.html">NullMatrixDiagException</a>)</td>
@@ -1406,7 +1441,7 @@ To be done if and only if the matrix is not singular, else an exception will be 
 
 </div>
 </div><p>
-<a class="anchor" name="8f41e07e9806c67a29a10416a430f579"></a><!-- doxytag: member="grassmann::Matrix::triang" ref="8f41e07e9806c67a29a10416a430f579" args="(Matrix m, int &amp;steps)" -->
+<a class="anchor" name="f911ce47206805cf2da81b2f3ea1982b"></a><!-- doxytag: member="grassmann::Matrix::triang" ref="f911ce47206805cf2da81b2f3ea1982b" args="(Matrix m, size_t &amp;steps)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1419,7 +1454,7 @@ To be done if and only if the matrix is not singular, else an exception will be 
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramtype">size_t &amp;&nbsp;</td>
           <td class="paramname"> <em>steps</em></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -1438,7 +1473,7 @@ To be done if and only if the matrix is not singular, else an exception will be 
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="grassmann_8hpp-source.html">grassmann.hpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Wed Aug 5 01:59:56 2009 for LibGrassmann by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Aug 13 10:57:54 2009 for LibGrassmann by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.6 </small></address>
 </body>

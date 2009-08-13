@@ -46,9 +46,15 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Vector.html#62ece542ba7c51a22866f6b8514f33ef">Vector</a> (size_t size,...)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor, given a list of double values.  <a href="#62ece542ba7c51a22866f6b8514f33ef"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Vector.html#dc3bff059e17ba7d3b71310d4cd01f0b">Vector</a> (std::string, char delim= ',')</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor, returns a vector from a list of terms given as string, with a delimitator between each of them (default delimitator: ',').  <a href="#dc3bff059e17ba7d3b71310d4cd01f0b"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Vector.html#1c53c0f4829396b3db7aa4096d37d605">norm2</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the 2-norm of a double vector of size n.  <a href="#1c53c0f4829396b3db7aa4096d37d605"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Vector.html#838a1376ed8e8d5bcb63ae71258711a4">operator=</a> (std::string s)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Construct the vector from a string i.e.  <a href="#838a1376ed8e8d5bcb63ae71258711a4"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">double &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgrassmann_1_1Vector.html#ff6d641099c55e400a9116415fa86c6c">operator[]</a> (size_t i)  throw (IndexOutOfBoundsException)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the i-th member of a vector.  <a href="#ff6d641099c55e400a9116415fa86c6c"></a><br></td></tr>
@@ -223,6 +229,43 @@ Constructor, given a list of double values.
 
 </div>
 </div><p>
+<a class="anchor" name="dc3bff059e17ba7d3b71310d4cd01f0b"></a><!-- doxytag: member="grassmann::Vector::Vector" ref="dc3bff059e17ba7d3b71310d4cd01f0b" args="(std::string, char delim= ',')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">grassmann::Vector::Vector           </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>delim</em> = <code>','</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Constructor, returns a vector from a list of terms given as string, with a delimitator between each of them (default delimitator: ','). 
+<p>
+i.e., "2,3,4" with delim = ',' will return a vector containing terms (2 3 4) <dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>str</em>&nbsp;</td><td>String containing the terms </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delim</em>&nbsp;</td><td>Delimitator between each term </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
 <hr><h2>Member Function Documentation</h2>
 <a class="anchor" name="1c53c0f4829396b3db7aa4096d37d605"></a><!-- doxytag: member="grassmann::Vector::norm2" ref="1c53c0f4829396b3db7aa4096d37d605" args="()" -->
 <div class="memitem">
@@ -248,6 +291,33 @@ Gets the 2-norm of a double vector of size n.
   </table>
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>2-norm (Euclidean distance) </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="838a1376ed8e8d5bcb63ae71258711a4"></a><!-- doxytag: member="grassmann::Vector::operator=" ref="838a1376ed8e8d5bcb63ae71258711a4" args="(std::string s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void grassmann::Vector::operator=           </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>s</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Construct the vector from a string i.e. 
+<p>
+: <a class="el" href="classgrassmann_1_1Vector.html" title="Class for operations on vectors.">Vector</a> v = "2,3,4"; <dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>String containing the elements of the vector (warning: you must use ',' as delimiter between the terms) </td></tr>
+  </table>
+</dl>
 
 </div>
 </div><p>
@@ -741,7 +811,7 @@ if their size is not the same or their elements are different <dl compact><dt><b
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="grassmann_8hpp-source.html">grassmann.hpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Wed Aug 5 01:59:56 2009 for LibGrassmann by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu Aug 13 10:57:54 2009 for LibGrassmann by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.6 </small></address>
 </body>

@@ -96,6 +96,17 @@ public:
 		 Vector(size_t size, ...);
 
 	/**
+	 * @brief Constructor, returns a vector from a list of
+	 * terms given as string, with a delimitator between
+	 * each of them (default delimitator: ','). i.e.,
+	 * "2,3,4" with delim = ',' will return a vector containing
+	 * terms (2 3 4)
+	 * @param str String containing the terms
+	 * @param delim Delimitator between each term
+	 */
+		 Vector(std::string, char delim = ',');
+
+	/**
 	 * @brief Gets the 2-norm of a double vector of size n
 	 * @param v Vector
 	 * @return 2-norm (Euclidean distance)
@@ -155,6 +166,14 @@ public:
 		friend bool operator!=(Vector a, Vector b);
 
 	/**
+	 * @brief Construct the vector from a string
+	 * i.e.: Vector v(3); v = "2,3,4";
+	 * @param s String containing the elements of the vector (warning: you must use ',' as delimiter
+	 * between the terms)
+	 */
+		void operator= (std::string s);
+
+	/**
 	 * @brief Gets the i-th member of a vector
 	 * @param i Index to get
 	 * @return The value to be read, if exists
@@ -211,7 +230,7 @@ public:
  */
 
 	class Matrix {
-		std::vector < std::vector<double> >matrix;
+		std::vector <Vector> matrix;
 
 	/**
 	 * @brief Swaps two rows of the matrix
@@ -462,6 +481,13 @@ public:
 	 * @exception InvalidMatrixIndexException If trying to access an index outside of the matrix
 	 */
 		double& operator() (size_t i, size_t j) throw(InvalidMatrixIndexException);
+
+	/**
+	 * @brief Return the i-th row of the matrix
+	 * @param i Index to be accessed
+	 * @exception InvalidMatrixIndexException If trying to access an index outside of the matrix
+	 */
+		Vector& operator[] (size_t i) throw(InvalidMatrixIndexException);
 
 	/**
 	 * @brief Returns a triangular matrix associated to our matrix through Gauss' method. To be done if and only if
