@@ -160,6 +160,20 @@ namespace grassmann {
 				return "The matrix is singular";
 			}
 	};
+
+/**
+ * @class ValueOutOfRangeException
+ * @brief Exception raised when trying to get a value outside of a range
+ */
+
+	class ValueOutOfRangeException : public std::exception {
+	public:
+		ValueOutOfRangeException() {}
+			
+		const char* what() const throw() {
+			return "Value out of range";
+		}
+	};
 }
 
 #endif

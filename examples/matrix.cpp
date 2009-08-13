@@ -1,7 +1,7 @@
 /**
  * Little program to get some information from a 2x2 arbitrary matrix
  * After the installation of Grassmann, compile it using
- * g++ -o example example.cpp -lgrassmann
+ * g++ -o matrix matrix.cpp -lgrassmann
  */
 
 #include <iostream>

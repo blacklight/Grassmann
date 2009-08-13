@@ -602,6 +602,41 @@ public:
  * @return Null vector by size n
  */
 	Vector nullVector(size_t n);
+
+/**
+ * @brief From n points on a cartesian plan, given as an array of Vector(s), compute the
+ * polynomial that interpolates (i.e. 'touches') all the points, and its
+ * value in 'x'. e.g. the polynomial that interpolates (-2,4), (0,0) and (1,1) is p(x) = x^2,
+ * so if I consider x=3 I get p(3) = 9. To do this, I'll construct a Vector[] array containing
+ * the points first:
+ *
+ * <pre>vector<Vector> v(3);
+ * v[0] = "-2,4";
+ * v[1] = "0,0";
+ * v[2] = "1,1";
+ *
+ * double x = 3.0;
+ * double px = polynomialInterpolation(x,v);
+ * // x = 9</pre>
+ *
+ * @param x Value in which I'm going to compute the interpolation polynomial
+ * @param points vector of Vector(s) containing the coordinates of the points to be interpolated
+ * @return The value of the interpolation polynomial in the point
+ */
+	double polynomialInterpolation (double x, std::vector<Vector> points);
+
+/**
+ * @brief From n points on a cartesian plan, given as an array of Vector(s), compute the
+ * value in 'x' variable from the linear interpolation of the points
+ * @param x Value in which I'm going to compute the interpolation polynomial
+ * @param points vector of Vector(s) containing the coordinates of the points to be interpolated
+ * @return The value of the linear interpolation in the point
+ * @throw ValueOutOfRangeException Exception raised when trying to get the linear interpolation in a
+ * 'x' value smaller than the smallest value in the range of points or greater than the greatest
+ * value in the range.
+ */
+	double linearInterpolation (double x, std::vector<Vector> points) throw(ValueOutOfRangeException);
+
 }
 
 #endif

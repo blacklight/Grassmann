@@ -1,4 +1,7 @@
 2009-08-13 BlackLight <blacklight@autistici.org>
+	* vector.cpp: Introduced polynomialInterpolation() and
+	linearInterpolation() functions.
+
 	* grassmann.hpp: Introduced for the Vector class the constructor
 	Vector(std::string, char delim = ',') and the operator= (std::string).
 	Now it's possible constructing a Vector from a string.
