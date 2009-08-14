@@ -17,13 +17,16 @@ high-level C++ interface.
 Website -> http://0x00.ath.cx/prog/grassmann
 
 Full documentation -> In doc/ directory in the source package or
-  http://0x00.ath.cx/prog/grassmann/doc/html/index.html
+  http://0x00.ath.cx/prog/grassmann/doc/html/index.html or in
+  /usr/share/grassmann after the installation
+
 
   LaTeX sources for the documentation available at 
   http://0x00.ath.cx/prog/grassmann/doc/latex/
 
   Examples -> http://0x00.ath.cx/prog/grassmann/examples , or in the examples/
-  directory in the source package
+  directory in the source package or in /usr/share/grassmann after the
+  installation
 
 For installation -> goto INSTALL file
 

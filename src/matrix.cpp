@@ -40,7 +40,6 @@
  *******************************************************************************/
 
 #include <algorithm>
-#include <string>
 #include <sstream>
 #include <cstdarg>
 #include <cmath>

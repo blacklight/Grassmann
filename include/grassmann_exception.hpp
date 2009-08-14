@@ -174,6 +174,21 @@ namespace grassmann {
 			return "Value out of range";
 		}
 	};
+
+/**
+ * @class CoincidentPointsException
+ * @brief Exception raised when trying to interpolate a set of points where
+ * two or more points have the same abscissa
+ */
+
+	class CoincidentPointsException : public std::exception {
+	public:
+		CoincidentPointsException() {}
+			
+		const char* what() const throw() {
+			return "Value out of range";
+		}
+	};
 }
 
 #endif

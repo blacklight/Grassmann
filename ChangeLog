@@ -1,3 +1,6 @@
+2009-08-14 BlackLight <blacklight@autistici.org>
+	* interpolate.cpp: New file added for managing interpolation
+
 2009-08-13 BlackLight <blacklight@autistici.org>
 	* vector.cpp: Introduced polynomialInterpolation() and
 	linearInterpolation() functions.

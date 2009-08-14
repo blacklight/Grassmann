@@ -39,8 +39,6 @@
  * this file might be covered by the GNU General Public License.              *
  *******************************************************************************/
 
-#include <iostream>
-#include <string>
 #include <sstream>
 #include <algorithm>
 
@@ -270,51 +268,6 @@ string Vector::toString()  {
 Vector nullVector (size_t n)  {
 	vector<double> v(n, 0.0);
 	return Vector(v);
-}
-
-double polynomialInterpolation (double x, vector<Vector> points)  {
-	size_t n = points.size();
-	double px = 0.0;
-	vector<double> lagrangian(n, 1.0);
-
-	for (size_t i=0; i < n; i++)
-		for (size_t j=0; j < n; j++)
-			if (i != j)
-				lagrangian[i] *= ( (x - points[j][0]) / (points[i][0] - points[j][0]) );
-
-	for (size_t i=0; i < n; i++)
-		px += (points[i][1] * lagrangian[i]);
-
-	return px;
-}
-
-namespace interpolateNS  {
-	bool vectorCmp (grassmann::Vector a, grassmann::Vector b)  {
-		return a[0] < b[0];
-	}
-}
-
-double linearInterpolation (double x, vector<Vector> points) throw(ValueOutOfRangeException)  {
-	int first_index = -1, last_index = -1;
-	sort (points.begin(), points.end(), interpolateNS::vectorCmp);
-
-	if ((x < points[0][0]) || (x > points[points.size()-1][0]))
-		throw ValueOutOfRangeException();
-
-	for (size_t i=0; i < points.size()-1; i++)  {
-		if (x >= points[i][0] && x <= points[i+1][0])  {
-			first_index = i;
-			last_index  = i+1;
-			break;
-		}
-	}
-
-	double x0 = points[first_index][0],
-		  x1 = points[last_index][0],
-		  y0 = points[first_index][1],
-		  y1 = points[last_index][1];
-
-	return ( (y1-y0)/(x1-x0) )*(x-x0) + y0;
 }
 
 // end of grassmann namespace, game over

@@ -52,7 +52,9 @@
 #ifndef _GRASSMANN_H
 #define _GRASSMANN_H
 
+#include <string>
 #include <vector>
+
 #include "grassmann_exception.hpp"
 
 /**
@@ -622,8 +624,10 @@ public:
  * @param x Value in which I'm going to compute the interpolation polynomial
  * @param points vector of Vector(s) containing the coordinates of the points to be interpolated
  * @return The value of the interpolation polynomial in the point
+ * @throw CoincidentPointsException Exception raised when two or more points in 'points' vector
+ * have the same abscissa
  */
-	double polynomialInterpolation (double x, std::vector<Vector> points);
+	double polynomialInterpolation (double x, std::vector<Vector> points) throw(CoincidentPointsException);
 
 /**
  * @brief From n points on a cartesian plan, given as an array of Vector(s), compute the
@@ -633,10 +637,12 @@ public:
  * @return The value of the linear interpolation in the point
  * @throw ValueOutOfRangeException Exception raised when trying to get the linear interpolation in a
  * 'x' value smaller than the smallest value in the range of points or greater than the greatest
- * value in the range.
+ * value in the range
+ * @throw CoincidentPointsException Exception raised when two or more points in 'points' vector
+ * have the same abscissa
  */
-	double linearInterpolation (double x, std::vector<Vector> points) throw(ValueOutOfRangeException);
-
+	double linearInterpolation (double x, std::vector<Vector> points)
+		throw(ValueOutOfRangeException, CoincidentPointsException);
 }
 
 #endif
