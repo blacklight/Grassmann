@@ -65,6 +65,10 @@ double Vector::norm2()  {
 	return sqrt(res);
 }
 
+double Vector::modulus()  {
+	return norm2();
+}
+
 Vector operator+ (Vector& a, Vector& b) throw(UnequalVectorSizeException)  {
 	Vector c;
 	
@@ -112,6 +116,21 @@ Vector operator* (double l, Vector v)  {
 
 Vector operator* (Vector v, double l)  {
 	return l*v;
+}
+
+Vector& operator% (Vector& u, Vector& v)
+		throw(UnequalVectorSizeException, InvalidVectorSizeException)  {
+	if (v.size() != u.size())
+		throw UnequalVectorSizeException();
+
+	if (v.size() != 3)
+		throw InvalidVectorSizeException();
+
+	Vector *z = new Vector(v.size());
+	(*z)[0] = u[1]*v[2] - u[2]*v[1];
+	(*z)[1] = u[0]*v[2] - u[2]*v[0];
+	(*z)[2] = u[0]*v[1] - u[1]*v[0];
+	return *z;
 }
 
 double& Vector::operator[] (size_t i) throw(IndexOutOfBoundsException)  {

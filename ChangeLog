@@ -1,4 +1,9 @@
+--- 0.2.2 release ---
+
 2009-08-14 BlackLight <blacklight@autistici.org>
+	* vector.cpp: Introduced modulus() function, as a synonim for norm2();
+	vectorial product has been implemented through operator '%'
+
 	* interpolate.cpp: New file added for managing interpolation
 
 2009-08-13 BlackLight <blacklight@autistici.org>

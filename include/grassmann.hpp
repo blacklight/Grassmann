@@ -110,10 +110,14 @@ public:
 
 	/**
 	 * @brief Gets the 2-norm of a double vector of size n
-	 * @param v Vector
 	 * @return 2-norm (Euclidean distance)
 	 */
 		double norm2();
+
+	/**
+	 * @brief Synonim for norm2() function (modulus, 2-norm, Euclidean distance)
+	 */
+		double modulus();
 
 	/**
 	 * @brief Sum of two vectors
@@ -150,6 +154,15 @@ public:
 	 */
 		friend Vector operator*(double l, Vector v);
 		friend Vector operator*(Vector v, double l);
+
+	/**
+	 * @brief Operator the vectorial product z = v x w between two vectors, v and w
+	 * @param v First vector
+	 * @param w Second vector
+	 * @return A vector representing the vectorial product v x w
+	 * @throw InvalidVectorSizeException When the size of the vectors is != 3
+	 */
+		friend Vector& operator% (Vector& v, Vector& w) throw(UnequalVectorSizeException, InvalidVectorSizeException);
 
 	/**
 	 * @brief Check if two vectors are equal, i.e. if their size is the same and all of their elements are equal

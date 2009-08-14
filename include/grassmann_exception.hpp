@@ -189,6 +189,20 @@ namespace grassmann {
 			return "Value out of range";
 		}
 	};
+
+/**
+ * @class InvalidVectorSizeException
+ * @brief Exception raised when trying to compute the vectorial product between
+ * two vectors whose size is != 3
+ */
+	class InvalidVectorSizeException : public std::exception  {
+	public:
+		InvalidVectorSizeException()  {}
+
+		const char* what() const throw()  {
+			return "The size of the vector is not valid";
+		}
+	};
 }
 
 #endif
